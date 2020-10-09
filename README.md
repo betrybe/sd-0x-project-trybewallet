@@ -360,7 +360,7 @@ Crie uma página para gerenciar a carteira de gastos em diversas moedas, e que t
   * A tabela deve ser alimentada pelo estado da aplicação, que estará disponível na chave ***expenses***.
   * Crie uma tabela que possua como cabeçalho os campos: Descrição, Tag, Método de pagamento, Valor, Moeda, Câmbio Utilizado, Valor Convertido, Moeda de Conversão e Editar/Deletar.
 
-    * Para cada **th** utilizado para criar a tabela, coloque o atributo *data-testid* com o mesmos valores acima. Por exemplo, *data-testid = 'Descrição'*
+    * Para cada **th** utilizado para criar a tabela, coloque o atributo ***data-testid*** com o mesmos valores acima. Por exemplo, *data-testid = 'Descrição'*
 
     * O campo de Editar/Deletar deve conter os dois botões, de Editar e Deletar. 
 
