@@ -4,52 +4,13 @@ Você já usa o GitHub diariamente para desenvolver os exercícios, certo? Agora
 
 Aqui você vai encontrar os detalhes de como estruturar o desenvolvimento do seu projeto a partir deste repositório, utilizando uma branch específica e um _Pull Request_ para colocar seus códigos.
 
----
+### Entrega
 
-## Instruções para entregar seu projeto:
+  - Projeto individual.
 
-### ANTES DE COMEÇAR A DESENVOLVER:
-
-1. Clone o repositório
-  * `git clone https://github.com:tryber/sd-00-trybe-wallet.git`.
-  * Entre na pasta do repositório que você acabou de clonar:
-    * `cd sd-00-trybe-wallet`
-
-2. Instale as dependências [**Caso existam**]
-  * `npm install`
-
-3. Crie uma branch a partir da branch `master`
-  * Verifique que você está na branch `master`
-    * Exemplo: `git branch`
-  * Se não estiver, mude para a branch `master`
-    * Exemplo: `git checkout master`
-  * Agora crie uma branch à qual você vai submeter os `commits` do seu projeto
-    * Você deve criar uma branch no seguinte formato: `nome-de-usuario-nome-do-projeto`
-    * Exemplo: `git checkout -b joaozinho-trybe-wallet`
-
-4. Adicione as mudanças ao _stage_ do Git e faça um `commit`
-  * Verifique que as mudanças ainda não estão no _stage_
-    * Exemplo: `git status` (deve aparecer listada a pasta _joaozinho_ em vermelho)
-  * Adicione o novo arquivo ao _stage_ do Git
-      * Exemplo:
-        * `git add .` (adicionando todas as mudanças - _que estavam em vermelho_ - ao stage do Git)
-        * `git status` (deve aparecer listado o arquivo _joaozinho/README.md_ em verde)
-  * Faça o `commit` inicial
-      * Exemplo:
-        * `git commit -m 'iniciando o projeto x'` (fazendo o primeiro commit)
-        * `git status` (deve aparecer uma mensagem tipo _nothing to commit_ )
-
-5. Adicione a sua branch com o novo `commit` ao repositório remoto
-  * Usando o exemplo anterior: `git push -u origin joaozinho-trybe-wallet`
-
-6. Crie um novo `Pull Request` _(PR)_
-  * Vá até a página de _Pull Requests_ do [repositório no GitHub](https://github.com/tryber/sd-00-trybe-wallet/pulls)
-  * Clique no botão verde _"New pull request"_
-  * Clique na caixa de seleção _"Compare"_ e escolha a sua branch **com atenção**
-  * Clique no botão verde _"Create pull request"_
-  * Adicione uma descrição para o _Pull Request_ e clique no botão verde _"Create pull request"_
-  * **Não se preocupe em preencher mais nada por enquanto!**
-  * Volte até a [página de _Pull Requests_ do repositório](https://github.com/tryber/sd-00-trybe-wallet/pulls) e confira que o seu _Pull Request_ está criado
+  - Serão três dias de projeto.
+  
+  - O projeto tem até a seguinte data: `DD/MM/YYYY - 14:00h`. Para ser entregue a avaliação final.
 
 ---
 
@@ -119,12 +80,6 @@ O retorno desse endpoint será algo no formato:
 
 Se você quiser aprender mais informações sobre a API, veja a [documentação](https://docs.awesomeapi.com.br/api-de-moedas).
 
-## Data de Entrega
-
-O projeto tem até a seguinte data: `DD/MM/YYYY - 14:00h`. Para ser entregue a avaliação final.
-
----
-
 
 ## Execução de testes unitários
 
@@ -163,6 +118,8 @@ Aqui encontram-se os requisitos do projeto. Em cada requisito você encontrara u
 
 Crie uma página para que a pessoa usuária se identifique, com email e senha. Esta página deve ser a página inicial de seu aplicativo.
 
+  ![image](login.gif)
+
 1. Crie uma página inicial de login com os seguintes campos para inserir email e senha.
 
   * A rota para esta página deve ser ‘/’.
@@ -179,11 +136,13 @@ Crie uma página para que a pessoa usuária se identifique, com email e senha. E
 
   * Salve o email no estado da aplicação, com a chave ***email***, assim que o usuário logar.
 
-  * A rota deve ser mudada para '/carteira' após o clique no botão.
+  * A rota deve ser mudada para '/carteira' após o clique no botão '**Entrar**'.
 
 ### Página da Carteira
 
 Crie uma página para gerenciar a carteira de gastos em diversas moedas, e que traga a despesa total em uma moeda só. Esta página deve ser renderizada por um componente chamado ***Carteira***.
+
+  ![image](carteira.gif)
 
 
 #### Header
@@ -199,7 +158,7 @@ Crie uma página para gerenciar a carteira de gastos em diversas moedas, e que t
 
     * Adicione o atributo *data-testid = 'total-field'*.
 
-    * Desenvolva o campo de modo que seja atualizado toda vez que o usuário inserir um novo gasto na tabela. Essa informação deverá ser proveniente da chave *total*, vinda do estado da aplicação.
+    * Desenvolva o campo de modo que seja atualizado toda vez que o usuário inserir um novo gasto na tabela.
 
   * Um campo que mostre qual câmbio está sendo utilizado, que será neste caso será 'BRL'.
 
@@ -360,7 +319,7 @@ Crie uma página para gerenciar a carteira de gastos em diversas moedas, e que t
   * A tabela deve ser alimentada pelo estado da aplicação, que estará disponível na chave ***expenses***.
   * Crie uma tabela que possua como cabeçalho os campos: Descrição, Tag, Método de pagamento, Valor, Moeda, Câmbio Utilizado, Valor Convertido, Moeda de Conversão e Editar/Deletar.
 
-    * Para cada **th** utilizado para criar a tabela, coloque o atributo ***data-testid*** com o mesmos valores acima. Por exemplo, *data-testid = 'Descrição'*
+    * Para cada **th** utilizado para criar a tabela, coloque o atributo *data-testid* com o mesmos valores acima. Por exemplo, *data-testid = 'Descrição'*
 
     * O campo de Editar/Deletar deve conter os dois botões, de Editar e Deletar. 
 
@@ -390,11 +349,15 @@ Crie uma página para gerenciar a carteira de gastos em diversas moedas, e que t
 
 5. Incremente a função de remover uma linha de gastos da tabela no botão de deletar.
 
+    ![image](btnExcluir.gif)
+
   * Adicione o atributo *data-testid = '${index}-delete-btn'* ao botão de deletar.
 
   * Desenvolva esse botão de modo que ele remova a informação da tabela e do estado da aplicação.
 
 6. Incremente a função de alterar uma linha de gastos da tabela no botão de editar. 
+
+    ![image](btnEditar.gif)
 
   * Os campos a serem alterados devem ser o mesmos encontrados no formulário de adicionar. Adicione os seguintes atributos *data-testid* a eles.
 
@@ -418,11 +381,15 @@ Crie uma página para gerenciar a carteira de gastos em diversas moedas, e que t
 
 7.  Adicione um dropdown no Header, como um campo de moeda utilizada, de maneira que o resultado das somas, de **gastos totais e do valor convertido de cada linha**, seja convertido para a moeda escolhida.
 
+    ![image](bonusDropdown.gif)
+
+
     * Transforme o campo que possui o *data-testid = 'header-currency-input'* em um dropdown, contendo os valores 'BRL', 'USD', 'CAD', 'EUR', 'GBP', 'ARS', 'BTC', 'LTC', 'JPY', 'CHF', 'AUD', 'CNY', 'ILS', 'ETH' e 'XRP'.
 
     * Salve a moeda selecionada no estado da aplicação, em uma chave ***currencyToExchange***
 
     * Quando escolhermos uma moeda diferente da padrão, que deve ser 'BRL', o valor da conversão de cada linha deve ser alterado, juntamente com a soma total das despesas no Header. Deve ser utilizada a cotação salva no momento da adição do gasto para o novo cálculo. 
+
 
 8. As informações disponíveis na tabela devem ser salvas no localStorage, na chave ***expenses*** e o email na chave ***email***, de forma que será possível manter as informações principais caso feche a aba ou atualize a página.
 
@@ -436,9 +403,9 @@ Crie uma página para gerenciar a carteira de gastos em diversas moedas, e que t
 ### ANTES DE COMEÇAR A DESENVOLVER:
 
 1. Clone o repositório
-  * `git clone git@github.com:tryber/sd-04-project-trybe-wallet.git`.
+  * `git clone git@github.com:tryber/sd-0X-project-trybe-wallet.git`.
   * Entre na pasta do repositório que você acabou de clonar:
-    * `cd sd-04-project-trybe-wallet`
+    * `cd sd-0X-project-trybe-wallet`
 
 2. Instale as dependências e inicialize o projeto
   * Instale as dependências:
@@ -453,9 +420,24 @@ Crie uma página para gerenciar a carteira de gastos em diversas moedas, e que t
     * Exemplo: `git checkout master`
   * Agora, crie uma branch para a demanda que você vai desenvolver do seu projeto
     * Você deve criar uma branch com uma breve descrição da demanda a ser desenvolvida
-    * Exemplo: `git checkout -b criar-campo-de-busca`
+    * Exemplo: `git checkout -b criar-page-carteira`
 
-4. Adicione as mudanças ao _stage_ do Git e faça um `commit`
+4. Crie um diretório `pages` dentro de `src` e crie suas páginas dentro deste diretório. Por exemplo, crie uma página `Carteira`:
+
+```sh
+mkdir src/pages
+touch src/pages/Carteira.js
+```
+
+```javascript
+import React from 'react';
+
+const Carteira = () => <div>Carteira de gastos com conversão de moedas</div>;
+
+export default Carteira;
+```
+
+5. Adicione as mudanças ao _stage_ do Git e faça um `commit`
   * Verifique que as mudanças ainda não estão no _stage_
     * Exemplo: `git status` (devem aparecer listadas as novas alterações em vermelho)
   * Adicione o arquivo alterado ao _stage_ do Git
@@ -464,13 +446,13 @@ Crie uma página para gerenciar a carteira de gastos em diversas moedas, e que t
         * `git status` (devem aparecer listadas as novas alterações em verde)
   * Faça seus `commit`
       * Exemplo:
-        * `git commit -m 'criando componente de busca`
+        * `git commit -m 'criando page Carteira`
         * `git status` (deve aparecer uma mensagem tipo _nothing to commit_ )
 
-5. Adicione a sua branch com o novo `commit` ao repositório remoto
-  * Usando o exemplo anterior: `git push -u origin criar-campo-de-busca`
+6. Adicione a sua branch com o novo `commit` ao repositório remoto
+  * Usando o exemplo anterior: `git push -u origin criar-page-carteira`
 
-6. Crie um novo `Pull Request` _(PR)_
+7. Crie um novo `Pull Request` _(PR)_
   * Vá até a página de _Pull Requests_ do [repositório no GitHub](https://github.com/tryber/sd-04-project-trybe-wallet/pulls)
   * Clique no botão verde _"New pull request"_
   * Clique na caixa de seleção _"Compare"_ e escolha a branch do grupo e a sua branch **com atenção**
@@ -479,13 +461,13 @@ Crie uma página para gerenciar a carteira de gastos em diversas moedas, e que t
   * **Não se preocupe em preencher mais nada por enquanto!**
   * Volte até a [página de _Pull Requests_ do repositório](https://github.com/tryber/sd-04-project-trybe-wallet/pulls) e confira que o seu _Pull Request_ está criado
 
-7. Após finalizar as alterações do seu _Pull Request_:
+8. Após finalizar as alterações do seu _Pull Request_:
   * Vá até a página **DO SEU** _Pull Request_, adicione a label de _"code-review"_ e marque as pessoas do seu grupo
   * No menu à direita, clique no _link_ **"Labels"** e escolha a _label_ **code-review**
   * No menu à direita, clique no _link_ **"Assignees"** e escolha **o seu usuário**
   * No menu à direita, clique no _link_ **"Reviewers"** e selecione dois membros do seu grupo
 
-8. Assim que aprovado por pelo menos duas pessoas do seu grupo e o _Code Climate_ estiver adereçado, acesse **SEU** _Pull Request_ e clique no botão _"Merge pull request"_
+9. Assim que aprovado por pelo menos duas pessoas do seu grupo e o _Code Climate_ estiver adereçado, acesse **SEU** _Pull Request_ e clique no botão _"Merge pull request"_
 
 ---
 
@@ -511,7 +493,7 @@ Para **"entregar"** seu projeto, siga os passos a seguir:
 * Vá até a página **DO SEU** _Pull Request_, adicione a label de _"code-review"_ e marque seus colegas
   * No menu à direita, clique no _link_ **"Labels"** e escolha a _label_ **code-review**
   * No menu à direita, clique no _link_ **"Assignees"** e escolha **o seu usuário**
-  * No menu à direita, clique no _link_ **"Reviewers"** e digite `students`, selecione o time `tryber/students-sd-04`
+  * No menu à direita, clique no _link_ **"Reviewers"** e digite `students`, selecione o time `tryber/students-sd-0X`
 
 Se ainda houver alguma dúvida sobre como entregar seu projeto, [aqui tem um video explicativo](https://vimeo.com/362189205).
 
