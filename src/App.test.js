@@ -1,14 +1,14 @@
 import React from 'react';
-import { fireEvent, screen, render, waitFor, getByTestId } from '@testing-library/react';
-import testData from './testData';
-import App from './App';
+import thunk from 'redux-thunk';
+import userEvent from '@testing-library/user-event';
+import { fireEvent, screen, render, waitFor } from '@testing-library/react';
 import { Router } from 'react-router-dom';
 import { createMemoryHistory } from 'history';
 import { Provider } from 'react-redux';
 import { applyMiddleware, createStore } from 'redux';
-import thunk from 'redux-thunk';
+import testData from './testData';
 import reducer from './reducers';
-import userEvent from '@testing-library/user-event';
+import App from './App';
 import Carteira from './pages/Carteira';
 
 const apiResponse = Promise.resolve({
@@ -46,7 +46,7 @@ describe('1 - [PÁGINA DE LOGIN] Crie uma página inicial de login com os seguin
     const { history } = renderWithRouter(<App />);
     expect(history.location.pathname).toBe('/');
   });
-  
+
   test('Crie um local para que o usuário insira seu email e senha', () => {
     renderWithRouter(<App />, '/');
     const email = screen.getByTestId('email-input');
@@ -158,7 +158,7 @@ describe('2 - [PAGINA DA CARTEIRA] Crie um header para a página com as seguinte
   });
 
   test('Crie um campo com a despesa total gerada pela lista de gastos.', () => {
-    const { store } = renderWithRouter(<Carteira />, '/carteira', initial);
+    renderWithRouter(<Carteira />, '/carteira', initial);
     const totalField = screen.getByTestId('total-field');
 
     expect(totalField).toContainHTML(0);
