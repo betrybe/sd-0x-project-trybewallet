@@ -459,7 +459,7 @@ describe('4 - [PAGINA DA CARTEIRA] Desenvolver uma tabela com os gastos', () => 
   });
 });
 
-describe('5 - [PAGINA DA CARTEIRA] Incremente a função de deletar uma linha de gastos da tabela no botão de deletar. ', () => {
+describe('5 - [PAGINA DA CARTEIRA] Incremente a função de deletar uma linha de gastos da tabela no botão de deletar.', () => {
   const initial = {
     isFetching: false,
     editor: false,
@@ -559,7 +559,7 @@ describe('5 - [PAGINA DA CARTEIRA] Incremente a função de deletar uma linha de
   });
 });
 
-describe('6 - [PAGINA DA CARTEIRA] Incremente a função de alterar uma linha de gastos da tabela no botão de editar. ', () => {
+describe('6 - [PAGINA DA CARTEIRA] Incremente a função de alterar uma linha de gastos da tabela no botão de editar.', () => {
   const initial = {
     isFetching: false,
     editor: false,
