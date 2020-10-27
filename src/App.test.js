@@ -158,7 +158,7 @@ describe('2 - [PAGINA DA CARTEIRA] Crie um header para a página com as seguinte
   });
 
   test('Crie um campo com a despesa total gerada pela lista de gastos.', () => {
-    const { store } = renderWithRouter(<Carteira />, '/carteira', initial);
+    renderWithRouter(<Carteira />, '/carteira', initial);
     const totalField = screen.getByTestId('total-field');
 
     expect(totalField).toContainHTML(0);
