@@ -107,7 +107,7 @@ describe('1 - [PÁGINA DE LOGIN] Crie uma página inicial de login com os seguin
     userEvent.type(senha, '123456');
     fireEvent.click(button);
 
-    expect(store.getState().email).toBe('alguem@email.com');
+    expect(store.getState().user.email).toBe('alguem@email.com');
   });
 
   test("A rota deve ser mudada para '/carteira' após o clique no botão.", () => {
@@ -419,9 +419,9 @@ describe('4 - [PAGINA DA CARTEIRA] Desenvolver uma tabela com os gastos', () => 
     expect(firstCurrency).toBeInTheDocument();
     expect(firstCurrency).toContainHTML('Dólar Comercial');
     expect(firstExchangeRate).toBeInTheDocument();
-    expect(firstExchangeRate).toContainHTML('5.58');
+    expect(firstExchangeRate).toContainHTML('5,58');
     expect(firstExchangedValue).toBeInTheDocument();
-    expect(firstExchangedValue).toContainHTML('55.75');
+    expect(firstExchangedValue).toContainHTML('55,75');
     expect(firstExcCurrencyName).toBeInTheDocument();
     expect(firstExcCurrencyName).toContainHTML('Real');
     expect(firstEditarExcluir).toBeInTheDocument();
@@ -450,9 +450,9 @@ describe('4 - [PAGINA DA CARTEIRA] Desenvolver uma tabela com os gastos', () => 
     expect(secondCurrency).toBeInTheDocument();
     expect(secondCurrency).toContainHTML('Euro');
     expect(secondExchangeRate).toBeInTheDocument();
-    expect(secondExchangeRate).toContainHTML('6.57');
+    expect(secondExchangeRate).toContainHTML('6,57');
     expect(secondExchangedValue).toBeInTheDocument();
-    expect(secondExchangedValue).toContainHTML('131.37');
+    expect(secondExchangedValue).toContainHTML('131,37');
     expect(secondExcCurrencyName).toBeInTheDocument();
     expect(secondExcCurrencyName).toContainHTML('Real');
     expect(secondEditarExcluir).toBeInTheDocument();
@@ -530,9 +530,9 @@ describe('5 - [PAGINA DA CARTEIRA] Incremente a função de deletar uma linha de
     expect(Currency).toBeInTheDocument();
     expect(Currency).toContainHTML('Euro');
     expect(ExchangeRate).toBeInTheDocument();
-    expect(ExchangeRate).toContainHTML('6.57');
+    expect(ExchangeRate).toContainHTML('6,57');
     expect(ExchangedValue).toBeInTheDocument();
-    expect(ExchangedValue).toContainHTML('131.37');
+    expect(ExchangedValue).toContainHTML('131,37');
     expect(ExcCurrencyName).toBeInTheDocument();
     expect(ExcCurrencyName).toContainHTML('Real');
     expect(EditarExcluir).toBeInTheDocument();
@@ -647,9 +647,9 @@ describe('6 - [PAGINA DA CARTEIRA] Incremente a função de alterar uma linha de
     expect(Currency).toBeInTheDocument();
     expect(Currency).toContainHTML('Dólar Canadense');
     expect(ExchangeRate).toBeInTheDocument();
-    expect(ExchangeRate).toContainHTML('4.20');
+    expect(ExchangeRate).toContainHTML('4,20');
     expect(ExchangedValue).toBeInTheDocument();
-    expect(ExchangedValue).toContainHTML('420.41');
+    expect(ExchangedValue).toContainHTML('420,41');
     expect(ExcCurrencyName).toBeInTheDocument();
     expect(ExcCurrencyName).toContainHTML('Real');
     expect(EditarExcluir).toBeInTheDocument();
@@ -786,13 +786,13 @@ describe('7 - [BÔNUS] Adicione um dropdown no Header, como um campo de moeda ut
     expect(Currency).toBeInTheDocument();
     expect(Currency).toContainHTML('Dólar Comercial');
     expect(ExchangeRate).toBeInTheDocument();
-    expect(ExchangeRate).toContainHTML('1.00');
+    expect(ExchangeRate).toContainHTML('1,00');
     expect(ExchangedValue).toBeInTheDocument();
-    expect(ExchangedValue).toContainHTML('10.00');
+    expect(ExchangedValue).toContainHTML('10,00');
     expect(ExcCurrencyName).toBeInTheDocument();
     expect(ExcCurrencyName).toContainHTML('Dólar Comercial');
     expect(EditarExcluir).toBeInTheDocument();
-    expect(totalExpenses).toContainHTML('33.56');
+    expect(totalExpenses).toContainHTML('33,56');
   });
 
   test("Quando escolhermos uma moeda, os valores convertidos devem mudar para a moeda escolhida. Este teste selecionará 'CNY'", async () => {
@@ -822,13 +822,13 @@ describe('7 - [BÔNUS] Adicione um dropdown no Header, como um campo de moeda ut
     expect(Currency).toBeInTheDocument();
     expect(Currency).toContainHTML('Dólar Comercial');
     expect(ExchangeRate).toBeInTheDocument();
-    expect(ExchangeRate).toContainHTML('6.79');
+    expect(ExchangeRate).toContainHTML('6,79');
     expect(ExchangedValue).toBeInTheDocument();
-    expect(ExchangedValue).toContainHTML('67.90');
+    expect(ExchangedValue).toContainHTML('67,90');
     expect(ExcCurrencyName).toBeInTheDocument();
     expect(ExcCurrencyName).toContainHTML('Yuan Chinês');
     expect(EditarExcluir).toBeInTheDocument();
-    expect(totalExpenses).toContainHTML('227.92');
+    expect(totalExpenses).toContainHTML('227,92');
   });
 });
 
@@ -845,7 +845,7 @@ describe('8 - [BÔNUS] As informações disponíveis na tabela devem ser salvas 
     },
   ];
   test('O email e os gastos do usuário estão salvos no localStorage e mantem os dados no app', async () => {
-    const { store } = renderWithRouter(<App />, '/');
+    const { store, history } = renderWithRouter(<App />, '/');
 
     const email = screen.getByTestId('email-input');
     const senha = screen.getByTestId('password-input');
@@ -879,7 +879,7 @@ describe('8 - [BÔNUS] As informações disponíveis na tabela devem ser salvas 
 
     expect(JSON.parse(localStorage.__STORE__['expenses'])).toStrictEqual(expenseCheck);
 
-    window.location.reload();
+    history.push('/carteira');
 
     const Description = screen.getByTestId('0-description');
     const Tag = screen.getByTestId('0-tag');
@@ -902,9 +902,9 @@ describe('8 - [BÔNUS] As informações disponíveis na tabela devem ser salvas 
     expect(Currency).toBeInTheDocument();
     expect(Currency).toContainHTML('Dólar Comercial');
     expect(ExchangeRate).toBeInTheDocument();
-    expect(ExchangeRate).toContainHTML('5.58');
+    expect(ExchangeRate).toContainHTML('5,58');
     expect(ExchangedValue).toBeInTheDocument();
-    expect(ExchangedValue).toContainHTML('55.75');
+    expect(ExchangedValue).toContainHTML('55,75');
     expect(ExcCurrencyName).toBeInTheDocument();
     expect(ExcCurrencyName).toContainHTML('Real');
     expect(EditarExcluir).toBeInTheDocument();
