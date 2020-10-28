@@ -19,7 +19,8 @@ class Login extends React.Component {
     this.setState({ email: e.target.value });
   }
 
-  handleClick() {
+  handleClick(e) {
+    e.preventDefault();
     const { email } = this.state;
     const { history, setUser } = this.props;
     setUser(email);
@@ -66,6 +67,7 @@ class Login extends React.Component {
             onClick={this.handleClick}
             disabled={this.checkButtonCondition()}
             data-testid="login-button"
+            type="submit"
           >
             Entrar
           </button>
