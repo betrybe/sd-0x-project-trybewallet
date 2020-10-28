@@ -1,10 +1,9 @@
-// Implemente aqui seu reducer
+import { combineReducers } from 'redux';
 
-const INITIAL_STATE = {};
+import user from './user';
+import wallet from './wallet';
 
-function reducer(state = INITIAL_STATE, action) {
-  switch (action.type) {
-    default:
-      return state;
-  }
-}
+export default combineReducers({
+  user,
+  wallet,
+});

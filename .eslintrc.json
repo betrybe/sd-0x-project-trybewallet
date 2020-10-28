@@ -115,6 +115,7 @@
         "logical": "ignore",
         "prop": "ignore"
       }
-    ]
+    ],
+    "no-underscore-dangle": "off"
   }
 }
