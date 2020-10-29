@@ -61,11 +61,14 @@ class Wallet extends React.Component {
   render() {
     const { email, currencies, expenses } = this.props;
     const { editMode, ...expense } = this.state;
+    const totalValue = expenses.length ? Math.round(
+      expenses.reduce((acc, curr) => acc + curr.value * curr.exchangeRates[curr.currency].ask, 0) * 100
+    ) / 100 : 0;
     return (
       <main>
         <header>
           <span data-testid="email-field">{ email }</span>
-          <span data-testid="total-field">0</span>
+          <span data-testid="total-field">{ totalValue }</span>
           <span data-testid="header-currency-field">BRL</span>
         </header>
         <form onSubmit={ this.handleSubmit }>
