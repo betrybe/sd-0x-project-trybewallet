@@ -7,7 +7,7 @@ Você já usa o GitHub diariamente para desenvolver os exercícios, certo? Agora
 Aqui você vai encontrar os detalhes de como estruturar o desenvolvimento do seu projeto a partir deste repositório, utilizando uma branch específica e um _Pull Request_ para colocar seus códigos.
 
 
-# Habilidades 
+# Habilidades
 Neste projeto, verificamos se voce é capaz de:
 
   * Criar um store Redux em aplicações React
@@ -48,7 +48,7 @@ Através dessa aplicação, será possível realizar as operações básicas de 
   - Projeto individual.
 
   - Serão três dias de projeto.
-  
+
   - O projeto tem até a seguinte data: `DD/MM/YYYY - 14:00h`. Para ser entregue a avaliação final.
 
 ---
@@ -58,9 +58,9 @@ Através dessa aplicação, será possível realizar as operações básicas de 
 ### ANTES DE COMEÇAR A DESENVOLVER:
 
 1. Clone o repositório
-  * `git clone git@github.com:tryber/sd-0X-project-trybe-wallet.git`.
+  * `git clone git@github.com:tryber/sd-0x-project-trybewallet.git`.
   * Entre na pasta do repositório que você acabou de clonar:
-    * `cd sd-0X-project-trybe-wallet`
+    * `cd sd-0x-project-trybewallet`
 
 2. Instale as dependências e inicialize o projeto
   * Instale as dependências:
@@ -94,14 +94,14 @@ Através dessa aplicação, será possível realizar as operações básicas de 
 
 ---
 
-### DEPOIS DE TERMINAR O DESENVOLVIMENTO
+### DEPOIS DE TERMINAR O DESENVOLVIMENTO (OPCIONAL)
 
 Para **"entregar"** seu projeto, siga os passos a seguir:
 
 * Vá até a página **DO SEU** _Pull Request_, adicione a label de _"code-review"_ e marque seus colegas
   * No menu à direita, clique no _link_ **"Labels"** e escolha a _label_ **code-review**
   * No menu à direita, clique no _link_ **"Assignees"** e escolha **o seu usuário**
-  * No menu à direita, clique no _link_ **"Reviewers"** e digite `students`, selecione o time `tryber/students-sd-0X`
+  * No menu à direita, clique no _link_ **"Reviewers"** e digite `students`, selecione o time `tryber/students-sd-0x`
 
 ---
 
@@ -169,7 +169,7 @@ npm test
 
 Aqui encontram-se os requisitos do projeto. Em cada requisito você encontrara uma imagem de um protótipo de como sua aplicação deve ficar. Estilo da página não será avaliado.
 
-⚠ **PULL REQUESTS COM ISSUES NO CODE CLIMATE NÃO SERÃO AVALIADAS, ATENTE-SE PARA RESOLVÊ-LAS ANTES DE FINALIZAR O DESENVOLVIMENTO!** ⚠
+⚠ **PULL REQUESTS COM ISSUES NO LINTER NÃO SERÃO AVALIADAS, ATENTE-SE PARA RESOLVÊ-LAS ANTES DE FINALIZAR O DESENVOLVIMENTO!** ⚠
 
 ### Página de Login
 
@@ -181,7 +181,7 @@ Crie uma página para que a pessoa usuária se identifique, com email e senha. E
 
   * A rota para esta página deve ser ‘/’.
 
-  * Você deve criar um local para que o usuário insira seu email e senha. Utilize o atributo *data-testid = 'email-input'* para o email e *data-testid = 'password-input'* para a senha.
+  * Você deve criar um local para que a pessoa usuária insira seu email e senha. Utilize o atributo `data-testid="email-input"` para o email e `data-testid="password-input"` para a senha.
 
   * Crie um botão com o texto ‘Entrar’.
 
@@ -191,7 +191,7 @@ Crie uma página para que a pessoa usuária se identifique, com email e senha. E
 
     * A senha é maior que 6 caracteres.
 
-  * Salve o email no estado da aplicação, com a chave ***email***, assim que o usuário logar.
+  * Salve o email no estado da aplicação, com a chave ***email***, assim que a pessoa usuária logar.
 
   * A rota deve ser mudada para '/carteira' após o clique no botão '**Entrar**'.
 
@@ -201,73 +201,83 @@ Crie uma página para gerenciar a carteira de gastos em diversas moedas, e que t
 
   ![image](carteira.gif)
 
+#### Configurando sua página
+
+2. Crie uma página para sua carteira com as seguintes características:
+
+  * A rota para esta página deve ser `/carteira`
+
+  * O componente deve se chamar Wallet e estar localizado na pasta `src/pages` no arquivo `Wallet.js`
+
 
 #### Header
 
 
-2. Crie um header para a página com as seguintes informações:
+3. Crie um header para a página de carteira contendo as seguintes características:
 
-  * Um campo que traga o email do usuário do estado da aplicação. 
+  * Um elemento que exiba o email da pessoa usuária que fez login.
 
-    * Adicione o atributo *data-testid = 'email-field'*.
+    * Adicione o atributo `data-testid="email-field"`.
 
-  * Um campo com a despesa total gerada pela lista de gastos. 
+  ```
+  Dica: você deve pegar o email do estado global da aplicação (no Redux)
+  ```
 
-    * Adicione o atributo *data-testid = 'total-field'*.
+  * Um campo com a despesa total gerada pela lista de gastos.
 
-    * Desenvolva o campo de modo que seja atualizado toda vez que o usuário inserir um novo gasto na tabela.
+    * Adicione o atributo `data-testid="total-field"`.
+
+    * Inicialmente esse campo deve exibir o valor `0`
 
   * Um campo que mostre qual câmbio está sendo utilizado, que será neste caso será 'BRL'.
 
-    * Adicione o atributo *data-testid = 'header-currency-input'*.
+    * Adicione o atributo `data-testid="header-currency-field"`.
 
 #### Formulário de adição de Despesa
 
-3. Desenvolva um formulário para adicionar uma despesa à tabela com as seguintes demandas:
+4. Desenvolva um formulário para adicionar uma despesa contendo as seguintes características:
 
   * Um campo para adicionar valor da despesa.
 
-    * Adicione o atributo *data-testid = 'value-input'*.
+    * Adicione o atributo `data-testid="value-input"`.
 
   * Um campo para adicionar a descrição da despesa.
 
-    * Adicione o atributo *data-testid = 'description-input'*.
+    * Adicione o atributo `data-testid="description-input"`.
 
   * Um campo para adicionar em qual moeda será registrada a despesa.
 
-    * Este campo deve ser um dropdown. O usuário deve poder escolher entre os campos: 'USD', 'CAD', 'EUR', 'GBP', 'ARS', 'BTC', 'LTC', 'JPY', 'CHF', 'AUD', 'CNY', 'ILS', 'ETH' e 'XRP'.
+    * Adicione o atributo `data-testid="currency-input"`.
+
+    * Este campo deve ser um dropdown. a pessoa usuária deve poder escolher entre os campos: 'USD', 'CAD', 'EUR', 'GBP', 'ARS', 'BTC', 'LTC', 'JPY', 'CHF', 'AUD', 'CNY', 'ILS', 'ETH' e 'XRP'.
 
     * Os valores do campo de moedas devem ser puxados através da requisição à API.
 
-      * Adicione um atributo *data-testid* para cada uma das opções acima com o câmbio correspondente, como por exemplo *data-testid = 'USD'*.
+      * Adicione um atributo *data-testid* para cada uma das opções acima com o câmbio correspondente, como por exemplo `data-testid="USD"`.
 
       * O endpoint utilizado deve ser: https://economia.awesomeapi.com.br/json/all .
 
-      * Remova das informações trazidas pela API a opção 'USDT' (Dólar Turismo). 
+      * Remova das informações trazidas pela API a opção 'USDT' (Dólar Turismo).
 
-    * Adicione o atributo *data-testid = 'currency-input'*.
-    
-  * Um campo para adicionar qual metodo de pagamento será utilizado.
+  * Um campo para adicionar qual método de pagamento será utilizado.
+
+    * Adicione o atributo `data-testid="method-input"`.
 
     * Este campo deve ser um dropdown. A pessoa usuária deve poder escolher entre os campos: 'Dinheiro', 'Cartão de crédito' e 'Cartão de débito'.
-    
-    * Adicione o atributo *data-testid = 'method-input'*.
 
-  * Um campo para selecionar uma tag.
+  * Um campo para selecionar uma categoria (tag) para a despesa.
 
-    * Este campo deve ser um dropdown. O usuário deve poder escolher entre os campos: 'Alimentação', 'Lazer', 'Trabalho', 'Transporte' e 'Saúde'.
+    * Este campo deve ser um dropdown. a pessoa usuária deve poder escolher entre os campos: 'Alimentação', 'Lazer', 'Trabalho', 'Transporte' e 'Saúde'.
 
-    * Adicione o atributo *data-testid = 'tag-input'*.
+    * Adicione o atributo `data-testid="tag-input"`.
 
     * Ao ser clicado, o botão deve fazer uma requisição à API para trazer o câmbio mais atualizado possível.
 
-  * Um botão de adicionar uma despesa com o texto 'Adicionar despesa'.
+  * Um botão com o texto \'Adicionar despesa\' que salva as informações da despesa no estado global.
 
-    * Adicione o atributo *data-testid = 'add
-  
     * Desenvolva a funcionalidade do botão "Adicionar despesa" de modo que ao clicar no botão, as seguintes ações sejam executadas:
-    
-    * Os valores dos campos devem ser salvas no estado da aplicação, na chave ***expenses***, dentro de um array contendo todos gastos que serão adicionados. Crie um id, e estruture as informações de cada despesa em objetos como este:
+
+    * Os valores dos campos devem ser salvos no estado da aplicação, na chave ***expenses***, dentro de um array contendo todos gastos que serão adicionados. Crie um id, e estruture as informações de cada despesa em objetos como este:
 
     ```
     expenses: [{
@@ -362,23 +372,23 @@ Crie uma página para gerenciar a carteira de gastos em diversas moedas, e que t
           "ask": "1.4",
           ...
         }
-      } 
+      }
     }]
-    ``` 
+    ```
 
     Salvaremos a cotação do câmbio feita no momento da adição para termos esse dado caso precisemos efetuar uma edição desse gasto com a mesma cotação do momento da adição. Caso não tivessemos esta informação salva, o valor da cotação trazida poderia ser diferente da obtida anteriormente.
 
 
 #### Tabela de Gastos
 
-4. Desenvolver uma tabela com os gastos. 
+5. Desenvolver uma tabela com os gastos.
 
   * A tabela deve ser alimentada pelo estado da aplicação, que estará disponível na chave ***expenses***.
   * Crie uma tabela que possua como cabeçalho os campos: Descrição, Tag, Método de pagamento, Valor, Moeda, Câmbio Utilizado, Valor Convertido, Moeda de Conversão e Editar/Deletar.
 
     * Para cada **th** utilizado para criar a tabela, coloque o atributo *data-testid* com o mesmos valores acima. Por exemplo, *data-testid = 'Descrição'*
 
-    * O campo de Editar/Deletar deve conter os dois botões, de Editar e Deletar. 
+    * O campo de Editar/Deletar deve conter os dois botões, de Editar e Deletar.
 
   * Crie um atributo *data-testid* com o index utilizado na confecção de cada linha de gasto da tabela. Utilize os seguintes formatos:
 
@@ -401,10 +411,10 @@ Crie uma página para gerenciar a carteira de gastos em diversas moedas, e que t
     *data-testid = '${index}-edit-delete'* ( este campo terá mais dois atributos data-testid, uma para cada botão, que serão adicionados mais à frente)
 
     * O campo de Moeda e Moeda de Conversão deverão conter o nome da moeda. Portanto, ao invés de 'USD' ou 'EUR', deve conter "Dólar Comercial" e "Euro", respectivamente.
-    
+
     * Atenção também às casas decimais dos campos. Como são valores contábeis, eles devem apresentar duas casas após a vírgula. Arredonde sua respota somente na hora de renderizar o resultado, e para os cálculos utilize sempre os valores vindos da API.
 
-5. Incremente a função de remover uma linha de gastos da tabela no botão de deletar.
+6. Incremente a função de remover uma linha de gastos da tabela no botão de deletar.
 
     ![image](btnExcluir.gif)
 
@@ -412,7 +422,7 @@ Crie uma página para gerenciar a carteira de gastos em diversas moedas, e que t
 
   * Desenvolva esse botão de modo que ele remova a informação da tabela e do estado da aplicação.
 
-6. Incremente a função de alterar uma linha de gastos da tabela no botão de editar. 
+7. Incremente a função de alterar uma linha de gastos da tabela no botão de editar.
 
     ![image](btnEditar.gif)
 
@@ -436,19 +446,19 @@ Crie uma página para gerenciar a carteira de gastos em diversas moedas, e que t
 
 ### Bônus
 
-7.  Adicione um dropdown no Header, como um campo de moeda utilizada, de maneira que o resultado das somas, de **gastos totais e do valor convertido de cada linha**, seja convertido para a moeda escolhida.
+8.  Adicione um dropdown no Header, como um campo de moeda utilizada, de maneira que o resultado das somas, de **gastos totais e do valor convertido de cada linha**, seja convertido para a moeda escolhida.
 
     ![image](bonusDropdown.gif)
 
 
-    * Transforme o campo que possui o *data-testid = 'header-currency-input'* em um dropdown, contendo os valores 'BRL', 'USD', 'CAD', 'EUR', 'GBP', 'ARS', 'BTC', 'LTC', 'JPY', 'CHF', 'AUD', 'CNY', 'ILS', 'ETH' e 'XRP'.
+    * Transforme o campo que possui o *data-testid = 'header-currency-field'* em um dropdown, contendo os valores 'BRL', 'USD', 'CAD', 'EUR', 'GBP', 'ARS', 'BTC', 'LTC', 'JPY', 'CHF', 'AUD', 'CNY', 'ILS', 'ETH' e 'XRP'.
 
     * Salve a moeda selecionada no estado da aplicação, em uma chave ***currencyToExchange***
 
-    * Quando escolhermos uma moeda diferente da padrão, que deve ser 'BRL', o valor da conversão de cada linha deve ser alterado, juntamente com a soma total das despesas no Header. Deve ser utilizada a cotação salva no momento da adição do gasto para o novo cálculo. 
+    * Quando escolhermos uma moeda diferente da padrão, que deve ser 'BRL', o valor da conversão de cada linha deve ser alterado, juntamente com a soma total das despesas no Header. Deve ser utilizada a cotação salva no momento da adição do gasto para o novo cálculo.
 
 
-8. As informações disponíveis na tabela devem ser salvas no localStorage, na chave ***expenses*** e o email na chave ***email***, de forma que será possível manter as informações principais caso feche a aba ou atualize a página.
+9. As informações disponíveis na tabela devem ser salvas no localStorage, na chave ***expenses*** e o email na chave ***email***, de forma que será possível manter as informações principais caso feche a aba ou atualize a página.
 
     * As informações devem estar renderizadas para a pessoa usuária e também disponíveis no estado da aplicação, nas mesmas chaves usadas anteriormente.
 
@@ -460,6 +470,6 @@ Ao finalizar e submeter o projeto, não se esqueça de avaliar sua experiência 
 
 Link: [FORMULÁRIO DE AVALIAÇÃO DE PROJETO](https://be-trybe.typeform.com/to/ZTeR4IbH#cohort_name=Turma%205)
 
-O avaliador automático não necessariamente avalia seu projeto na ordem em que os requisitos aparecem no readme. Isso acontece para deixar o processo de avaliação mais rápido. Então, não se assuste se isso acontecer, ok? 
+O avaliador automático não necessariamente avalia seu projeto na ordem em que os requisitos aparecem no readme. Isso acontece para deixar o processo de avaliação mais rápido. Então, não se assuste se isso acontecer, ok?
 
 ---
