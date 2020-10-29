@@ -225,7 +225,7 @@ describe('4 - [PÁGINA DA CARTEIRA] Desenvolva um formulário para adicionar uma
     expect(healthOption).toBeInTheDocument();
   });
 
-  test('Um botão com o texto \'Adicionar despesa\' que salva as informações da despesa no estado global', async () => {
+  test('Um botão com o texto \'Adicionar despesa\' que salva as informações da despesa no estado global e atualiza a soma de despesas no header', async () => {
     const { store } = renderWithRouterAndStore(<Wallet />, '/carteira');
     const addButton = await screen.findByText(/Adicionar despesa/i);
     const valueInput = await screen.findByTestId('value-input');
@@ -294,6 +294,9 @@ describe('4 - [PÁGINA DA CARTEIRA] Desenvolva um formulário para adicionar uma
       expect(valueInput).toContainHTML(0);
     });
     expect(store.getState().wallet.expenses).toStrictEqual(expectedStateExpense2);
+
+    const totalField = screen.getByTestId('total-field');
+    expect(totalField).toContainHTML('187.12')
   });
 });
 

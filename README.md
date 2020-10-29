@@ -169,13 +169,31 @@ Aqui encontram-se os requisitos do projeto. Em cada requisito você encontrara u
 
 ⚠ **PULL REQUESTS COM ISSUES NO LINTER NÃO SERÃO AVALIADAS, ATENTE-SE PARA RESOLVÊ-LAS ANTES DE FINALIZAR O DESENVOLVIMENTO!** ⚠
 
+### Antes de começar
+
+Nessa aplicação você deverá **obrigatoriamente** utilizar o seguinte formato do estado global:
+
+```
+{
+  user: {
+    email: '',
+  },
+  wallet: {
+    currencies: [],
+    expenses: []
+  }
+}
+```
+
+É importante respeitar esse formato para que o avaliador funcione corretamente. Você pode adicionar novos campos ao seu estado global, mas essa estrutura básica deve se manter. Por exemplo, você pode adicionar uma propriedade `isFetching` no seu estado. Mas você **não** pode salvar as despesas em uma chave diferente de `wallet.expenses`.
+
 ### Página de Login
 
 Crie uma página para que a pessoa usuária se identifique, com email e senha. Esta página deve ser a página inicial de seu aplicativo.
 
   ![image](login.gif)
 
-1. Crie uma página inicial de login com os seguintes campos para inserir email e senha.
+1. Crie uma página inicial de login com os seguintes campos e características:
 
   * A rota para esta página deve ser ‘/’.
 
@@ -271,7 +289,7 @@ Crie uma página para gerenciar a carteira de gastos em diversas moedas, e que t
 
     * Ao ser clicado, o botão deve fazer uma requisição à API para trazer o câmbio mais atualizado possível.
 
-  * Um botão com o texto \'Adicionar despesa\' que salva as informações da despesa no estado global.
+  * Um botão com o texto \'Adicionar despesa\' que salva as informações da despesa no estado global e atualiza a soma de despesas no header.
 
     * Desenvolva a funcionalidade do botão "Adicionar despesa" de modo que ao clicar no botão, as seguintes ações sejam executadas:
     
@@ -284,6 +302,8 @@ Crie uma página para gerenciar a carteira de gastos em diversas moedas, e que t
     ```
     Atenção nesse ponto: você deverá fazer uma requisição para API e buscar a cotação no momento que o botão de `Adicionar despesa` for apertado. Para isso você deve utilizar um thunk
     ```
+
+    * Após adicionar a despesa, atualize a soma total das despesas. Essa informação deve ficar no header dentro do elemento com `data-testid="total-field"`
 
     As despesas salvas no Redux ficarão com um formato semelhante ao seguinte:
     ```
