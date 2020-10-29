@@ -289,7 +289,7 @@ Crie uma página para gerenciar a carteira de gastos em diversas moedas, e que t
 
     * Ao ser clicado, o botão deve fazer uma requisição à API para trazer o câmbio mais atualizado possível.
 
-  * Um botão com o texto \'Adicionar despesa\' que salva as informações da despesa no estado global e atualiza a soma de despesas no header.
+  * Um botão com o texto \'Adicionar despesa\' que salva as informações da despesa no estado global e atualiza a soma de despesas no header..
 
     * Desenvolva a funcionalidade do botão "Adicionar despesa" de modo que ao clicar no botão, as seguintes ações sejam executadas:
     
