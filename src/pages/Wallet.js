@@ -62,7 +62,7 @@ class Wallet extends React.Component {
     const { email, currencies, expenses } = this.props;
     const { editMode, ...expense } = this.state;
     const totalValue = expenses.length ? Math.round(
-      expenses.reduce((acc, curr) => acc + curr.value * curr.exchangeRates[curr.currency].ask, 0) * 100
+      expenses.reduce((acc, curr) => acc + curr.value * curr.exchangeRates[curr.currency].ask, 0) * 100,
     ) / 100 : 0;
     return (
       <main>
@@ -175,9 +175,14 @@ class Wallet extends React.Component {
                   <td>{e.method}</td>
                   <td>{e.value}</td>
                   <td>{e.exchangeRates[e.currency].name}</td>
-                  <td>{(Math.round(e.exchangeRates[e.currency].ask * 100) / 100).toFixed(2)}</td>
                   <td>
-                    {(Number(e.exchangeRates[e.currency].ask) * Number(e.value)).toFixed(2)}
+                    {(Math.round(e.exchangeRates[e.currency].ask * 100) / 100).toFixed(2)}
+                  </td>
+                  <td>
+                    {
+                      (Number(e.exchangeRates[e.currency].ask)
+                        * Number(e.value)).toFixed(2)
+                    }
                   </td>
                   <td>Real</td>
                   <td>
