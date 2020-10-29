@@ -11,6 +11,10 @@ jobs:
       - uses: actions/setup-node@v1.4.3
         with:
           node-version: '12'
+      - name: Static code analysis step
+        uses: betrybe/eslint-linter-action@v2
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
       - name: Evaluator step
         id: evaluator
         uses: betrybe/react-scripts-evaluator-action@v4
