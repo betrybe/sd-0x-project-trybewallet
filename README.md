@@ -7,7 +7,7 @@ Você já usa o GitHub diariamente para desenvolver os exercícios, certo? Agora
 Aqui você vai encontrar os detalhes de como estruturar o desenvolvimento do seu projeto a partir deste repositório, utilizando uma branch específica e um _Pull Request_ para colocar seus códigos.
 
 
-# Habilidades 
+# Habilidades
 Neste projeto, verificamos se voce é capaz de:
 
   * Criar um store Redux em aplicações React
@@ -48,7 +48,7 @@ Através dessa aplicação, será possível realizar as operações básicas de 
   - Projeto individual.
 
   - Serão três dias de projeto.
-  
+
   - O projeto tem até a seguinte data: `DD/MM/YYYY - 14:00h`. Para ser entregue a avaliação final.
 
 ---
@@ -58,9 +58,9 @@ Através dessa aplicação, será possível realizar as operações básicas de 
 ### ANTES DE COMEÇAR A DESENVOLVER:
 
 1. Clone o repositório
-  * `git clone git@github.com:tryber/sd-0X-project-trybe-wallet.git`.
+  * `git clone git@github.com:tryber/sd-0x-project-trybe-wallet.git`.
   * Entre na pasta do repositório que você acabou de clonar:
-    * `cd sd-0X-project-trybe-wallet`
+    * `cd sd-0x-project-trybe-wallet`
 
 2. Instale as dependências e inicialize o projeto
   * Instale as dependências:
@@ -101,7 +101,7 @@ Para **"entregar"** seu projeto, siga os passos a seguir:
 * Vá até a página **DO SEU** _Pull Request_, adicione a label de _"code-review"_ e marque seus colegas
   * No menu à direita, clique no _link_ **"Labels"** e escolha a _label_ **code-review**
   * No menu à direita, clique no _link_ **"Assignees"** e escolha **o seu usuário**
-  * No menu à direita, clique no _link_ **"Reviewers"** e digite `students`, selecione o time `tryber/students-sd-0X`
+  * No menu à direita, clique no _link_ **"Reviewers"** e digite `students`, selecione o time `tryber/students-sd-0x`
 
 ---
 
@@ -169,7 +169,7 @@ npm test
 
 Aqui encontram-se os requisitos do projeto. Em cada requisito você encontrara uma imagem de um protótipo de como sua aplicação deve ficar. Estilo da página não será avaliado.
 
-⚠ **PULL REQUESTS COM ISSUES NO CODE CLIMATE NÃO SERÃO AVALIADAS, ATENTE-SE PARA RESOLVÊ-LAS ANTES DE FINALIZAR O DESENVOLVIMENTO!** ⚠
+⚠ **PULL REQUESTS COM ISSUES NO LINTER NÃO SERÃO AVALIADAS, ATENTE-SE PARA RESOLVÊ-LAS ANTES DE FINALIZAR O DESENVOLVIMENTO!** ⚠
 
 ### Página de Login
 
@@ -223,7 +223,7 @@ Crie uma página para gerenciar a carteira de gastos em diversas moedas, e que t
   Dica: você deve pegar o email do estado global da aplicação (no Redux)
   ```
 
-  * Um campo com a despesa total gerada pela lista de gastos. 
+  * Um campo com a despesa total gerada pela lista de gastos.
 
     * Adicione o atributo `data-testid="total-field"`.
 
@@ -257,8 +257,8 @@ Crie uma página para gerenciar a carteira de gastos em diversas moedas, e que t
 
       * O endpoint utilizado deve ser: https://economia.awesomeapi.com.br/json/all .
 
-      * Remova das informações trazidas pela API a opção 'USDT' (Dólar Turismo). 
-    
+      * Remova das informações trazidas pela API a opção 'USDT' (Dólar Turismo).
+
   * Um campo para adicionar qual método de pagamento será utilizado.
 
     * Adicione o atributo `data-testid="method-input"`.
@@ -276,7 +276,7 @@ Crie uma página para gerenciar a carteira de gastos em diversas moedas, e que t
   * Um botão com o texto \'Adicionar despesa\' que salva as informações da despesa no estado global.
 
     * Desenvolva a funcionalidade do botão "Adicionar despesa" de modo que ao clicar no botão, as seguintes ações sejam executadas:
-    
+
     * Os valores dos campos devem ser salvos no estado da aplicação, na chave ***expenses***, dentro de um array contendo todos gastos que serão adicionados. Crie um id, e estruture as informações de cada despesa em objetos como este:
 
     ```
@@ -372,23 +372,23 @@ Crie uma página para gerenciar a carteira de gastos em diversas moedas, e que t
           "ask": "1.4",
           ...
         }
-      } 
+      }
     }]
-    ``` 
+    ```
 
     Salvaremos a cotação do câmbio feita no momento da adição para termos esse dado caso precisemos efetuar uma edição desse gasto com a mesma cotação do momento da adição. Caso não tivessemos esta informação salva, o valor da cotação trazida poderia ser diferente da obtida anteriormente.
 
 
 #### Tabela de Gastos
 
-5. Desenvolver uma tabela com os gastos. 
+5. Desenvolver uma tabela com os gastos.
 
   * A tabela deve ser alimentada pelo estado da aplicação, que estará disponível na chave ***expenses***.
   * Crie uma tabela que possua como cabeçalho os campos: Descrição, Tag, Método de pagamento, Valor, Moeda, Câmbio Utilizado, Valor Convertido, Moeda de Conversão e Editar/Deletar.
 
     * Para cada **th** utilizado para criar a tabela, coloque o atributo *data-testid* com o mesmos valores acima. Por exemplo, *data-testid = 'Descrição'*
 
-    * O campo de Editar/Deletar deve conter os dois botões, de Editar e Deletar. 
+    * O campo de Editar/Deletar deve conter os dois botões, de Editar e Deletar.
 
   * Crie um atributo *data-testid* com o index utilizado na confecção de cada linha de gasto da tabela. Utilize os seguintes formatos:
 
@@ -411,7 +411,7 @@ Crie uma página para gerenciar a carteira de gastos em diversas moedas, e que t
     *data-testid = '${index}-edit-delete'* ( este campo terá mais dois atributos data-testid, uma para cada botão, que serão adicionados mais à frente)
 
     * O campo de Moeda e Moeda de Conversão deverão conter o nome da moeda. Portanto, ao invés de 'USD' ou 'EUR', deve conter "Dólar Comercial" e "Euro", respectivamente.
-    
+
     * Atenção também às casas decimais dos campos. Como são valores contábeis, eles devem apresentar duas casas após a vírgula. Arredonde sua respota somente na hora de renderizar o resultado, e para os cálculos utilize sempre os valores vindos da API.
 
 6. Incremente a função de remover uma linha de gastos da tabela no botão de deletar.
@@ -422,7 +422,7 @@ Crie uma página para gerenciar a carteira de gastos em diversas moedas, e que t
 
   * Desenvolva esse botão de modo que ele remova a informação da tabela e do estado da aplicação.
 
-7. Incremente a função de alterar uma linha de gastos da tabela no botão de editar. 
+7. Incremente a função de alterar uma linha de gastos da tabela no botão de editar.
 
     ![image](btnEditar.gif)
 
@@ -455,7 +455,7 @@ Crie uma página para gerenciar a carteira de gastos em diversas moedas, e que t
 
     * Salve a moeda selecionada no estado da aplicação, em uma chave ***currencyToExchange***
 
-    * Quando escolhermos uma moeda diferente da padrão, que deve ser 'BRL', o valor da conversão de cada linha deve ser alterado, juntamente com a soma total das despesas no Header. Deve ser utilizada a cotação salva no momento da adição do gasto para o novo cálculo. 
+    * Quando escolhermos uma moeda diferente da padrão, que deve ser 'BRL', o valor da conversão de cada linha deve ser alterado, juntamente com a soma total das despesas no Header. Deve ser utilizada a cotação salva no momento da adição do gasto para o novo cálculo.
 
 
 9. As informações disponíveis na tabela devem ser salvas no localStorage, na chave ***expenses*** e o email na chave ***email***, de forma que será possível manter as informações principais caso feche a aba ou atualize a página.
@@ -470,6 +470,6 @@ Ao finalizar e submeter o projeto, não se esqueça de avaliar sua experiência 
 
 Link: [FORMULÁRIO DE AVALIAÇÃO DE PROJETO](https://be-trybe.typeform.com/to/ZTeR4IbH#cohort_name=Turma%205)
 
-O avaliador automático não necessariamente avalia seu projeto na ordem em que os requisitos aparecem no readme. Isso acontece para deixar o processo de avaliação mais rápido. Então, não se assuste se isso acontecer, ok? 
+O avaliador automático não necessariamente avalia seu projeto na ordem em que os requisitos aparecem no readme. Isso acontece para deixar o processo de avaliação mais rápido. Então, não se assuste se isso acontecer, ok?
 
 ---
