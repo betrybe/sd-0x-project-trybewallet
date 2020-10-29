@@ -1,46 +1,20 @@
 import React from 'react';
-import thunk from 'redux-thunk';
 import userEvent from '@testing-library/user-event';
-import { fireEvent, screen, render, waitFor } from '@testing-library/react';
-import { Router } from 'react-router-dom';
-import { createMemoryHistory } from 'history';
-import { Provider } from 'react-redux';
-import { applyMiddleware, createStore } from 'redux';
-import testData from './testData';
-import reducer from './reducers';
-import App from './App';
-import Wallet from './pages/Wallet';
+import { fireEvent, screen, waitFor } from '@testing-library/react';
+import { response as mockData, initialStateHeader, initialStateWithExpenses } from './mockData';
+import App from '../App';
+import Wallet from '../pages/Wallet';
+
+import { renderWithRouterAndStore } from './testConfig'
 
 const apiResponse = Promise.resolve({
-  json: () => Promise.resolve(testData),
+  json: () => Promise.resolve(mockData),
   ok: true,
 });
 
 const mockedExchange = jest.spyOn(global, 'fetch').mockImplementation(() => apiResponse);
 
 afterEach(() => jest.clearAllMocks());
-
-const getStore = (initialState) => {
-  if (!initialState) return createStore(reducer, applyMiddleware(thunk));
-  return createStore(reducer, initialState, applyMiddleware(thunk));
-};
-
-const renderWithRouterAndStore = (component, routeConfigs = {}, initialState) => {
-  const route = routeConfigs.route || '/';
-  const store = getStore(initialState);
-  const history = routeConfigs.history
-    || createMemoryHistory({ initialEntries: [route] });
-
-  return {
-    ...render(
-      <Provider store={ store }>
-        <Router history={ history }>{component}</Router>
-      </Provider>,
-    ),
-    history,
-    store,
-  };
-};
 
 describe('1 - [PÁGINA DE LOGIN] Crie uma página inicial de login com os seguintes campos e características:', () => {
   test('A rota para esta página deve ser \'/\'', () => {
@@ -140,33 +114,8 @@ describe('2 - [PÁGINA DA CARTEIRA] Crie uma página para sua carteira com as se
 });
 
 describe('3 - [PÁGINA DA CARTEIRA] Crie um header para a página de carteira contendo as seguintes características:', () => {
-  const initial = {
-    user: {
-      email: 'alguem@email.com',
-    },
-    isFetching: false,
-    editor: false,
-    idToEdit: 0,
-    currencyToExchange: 'BRL',
-    currencies: [
-      'USD',
-      'USDT',
-      'CAD',
-      'EUR',
-      'GBP',
-      'ARS',
-      'BTC',
-      'LTC',
-      'JPY',
-      'CHF',
-      'AUD',
-      'CNY',
-      'ILS',
-      'ETH',
-      'XRP',
-    ],
-    expenses: [],
-  };
+  const initial = initialStateHeader;
+
   test('Um elemento que exiba o email do usuário que fez login.', () => {
     const { store } = renderWithRouterAndStore(<Wallet />, '/carteira', initial);
     const emailField = screen.getByTestId('email-field');
@@ -303,7 +252,7 @@ describe('4 - [PÁGINA DA CARTEIRA] Desenvolva um formulário para adicionar uma
         method: 'Cartão de crédito',
         tag: 'Lazer',
         description: 'Dez dólares',
-        exchangeRates: testData,
+        exchangeRates: mockData,
       },
     ];
 
@@ -328,7 +277,7 @@ describe('4 - [PÁGINA DA CARTEIRA] Desenvolva um formulário para adicionar uma
         method: 'Cartão de crédito',
         tag: 'Lazer',
         description: 'Dez dólares',
-        exchangeRates: testData,
+        exchangeRates: mockData,
       },
       {
         id: 1,
@@ -337,7 +286,7 @@ describe('4 - [PÁGINA DA CARTEIRA] Desenvolva um formulário para adicionar uma
         method: 'Cartão de débito',
         tag: 'Trabalho',
         description: 'Vinte euros',
-        exchangeRates: testData,
+        exchangeRates: mockData,
       },
     ];
 
@@ -349,53 +298,7 @@ describe('4 - [PÁGINA DA CARTEIRA] Desenvolva um formulário para adicionar uma
 });
 
 describe('5 - [PÁGINA DA CARTEIRA] Desenvolva uma tabela com os gastos', () => {
-  const initial = {
-    user: {
-      email: 'alguem@email.com',
-    },
-    wallet: {
-      isFetching: false,
-      editor: false,
-      idToEdit: 0,
-      currencyToExchange: 'BRL',
-      currencies: [
-        'USD',
-        'CAD',
-        'EUR',
-        'GBP',
-        'ARS',
-        'BTC',
-        'LTC',
-        'JPY',
-        'CHF',
-        'AUD',
-        'CNY',
-        'ILS',
-        'ETH',
-        'XRP',
-      ],
-      expenses: [
-        {
-          id: 0,
-          value: '10',
-          currency: 'USD',
-          method: 'Cartão de crédito',
-          tag: 'Lazer',
-          description: 'Dez dólares',
-          exchangeRates: testData,
-        },
-        {
-          id: 1,
-          value: '20',
-          currency: 'EUR',
-          method: 'Dinheiro',
-          tag: 'Trabalho',
-          description: 'Vinte euros',
-          exchangeRates: testData,
-        },
-      ],
-    },
-  };
+  const initial = initialStateWithExpenses;
 
   test('Crie uma tabela que possua como cabeçalho os campos Descrição, Tag, Método de pagamento, Valor, Moeda, Câmbio utilizado, Valor convertido e Moeda de conversão', () => {
     renderWithRouterAndStore(<Wallet />, '/carteira', initial);
@@ -443,53 +346,7 @@ describe('5 - [PÁGINA DA CARTEIRA] Desenvolva uma tabela com os gastos', () => 
 });
 
 describe('6 - [PÁGINA DA CARTEIRA] Crie um botão para deletar uma despesa da tabela contendo as seguintes características:', () => {
-  const initial = {
-    user: {
-      email: 'alguem@email.com',
-    },
-    wallet: {
-      isFetching: false,
-      editor: false,
-      idToEdit: 0,
-      currencyToExchange: 'BRL',
-      currencies: [
-        'USD',
-        'CAD',
-        'EUR',
-        'GBP',
-        'ARS',
-        'BTC',
-        'LTC',
-        'JPY',
-        'CHF',
-        'AUD',
-        'CNY',
-        'ILS',
-        'ETH',
-        'XRP',
-      ],
-      expenses: [
-        {
-          id: 0,
-          value: '10',
-          currency: 'USD',
-          method: 'Cartão de crédito',
-          tag: 'Lazer',
-          description: 'Dez dólares',
-          exchangeRates: testData,
-        },
-        {
-          id: 1,
-          value: '20',
-          currency: 'EUR',
-          method: 'Dinheiro',
-          tag: 'Trabalho',
-          description: 'Vinte euros',
-          exchangeRates: testData,
-        },
-      ],
-    },
-  };
+  const initial = initialStateWithExpenses;
 
   test('O botão deve estar dentro do último item da linha da tabela e deve possuir `data-testid="delete-btn"`', () => {
     renderWithRouterAndStore(<Wallet />, '/carteira', initial);
@@ -517,7 +374,7 @@ describe('6 - [PÁGINA DA CARTEIRA] Crie um botão para deletar uma despesa da t
         method: 'Dinheiro',
         tag: 'Trabalho',
         description: 'Vinte euros',
-        exchangeRates: testData,
+        exchangeRates: mockData,
       },
     ];
 
@@ -526,53 +383,7 @@ describe('6 - [PÁGINA DA CARTEIRA] Crie um botão para deletar uma despesa da t
 });
 
 describe('7 - [BÔNUS] Crie um botão para editar uma despesa da tabela contendo as seguintes características:', () => {
-  const initial = {
-    user: {
-      email: 'alguem@email.com',
-    },
-    wallet: {
-      isFetching: false,
-      editor: false,
-      idToEdit: 0,
-      currencyToExchange: 'BRL',
-      currencies: [
-        'USD',
-        'CAD',
-        'EUR',
-        'GBP',
-        'ARS',
-        'BTC',
-        'LTC',
-        'JPY',
-        'CHF',
-        'AUD',
-        'CNY',
-        'ILS',
-        'ETH',
-        'XRP',
-      ],
-      expenses: [
-        {
-          id: 0,
-          value: '10',
-          currency: 'USD',
-          method: 'Cartão de crédito',
-          tag: 'Lazer',
-          description: 'Dez dólares',
-          exchangeRates: testData,
-        },
-        {
-          id: 1,
-          value: '20',
-          currency: 'EUR',
-          method: 'Dinheiro',
-          tag: 'Trabalho',
-          description: 'Vinte euros',
-          exchangeRates: testData,
-        },
-      ],
-    },
-  };
+  const initial = initialStateWithExpenses;
 
   test('O botão deve estar dentro do último item da linha da tabela e deve possuir `data-testid="edit-btn"`', () => {
     renderWithRouterAndStore(<Wallet />, '/carteira', initial);
@@ -621,7 +432,7 @@ describe('7 - [BÔNUS] Crie um botão para editar uma despesa da tabela contendo
         method: 'Dinheiro',
         tag: 'Trabalho',
         description: 'Cem dólares canadenses',
-        exchangeRates: testData,
+        exchangeRates: mockData,
       },
       {
         id: 1,
@@ -630,7 +441,7 @@ describe('7 - [BÔNUS] Crie um botão para editar uma despesa da tabela contendo
         method: 'Dinheiro',
         tag: 'Trabalho',
         description: 'Vinte euros',
-        exchangeRates: testData,
+        exchangeRates: mockData,
       },
     ];
 

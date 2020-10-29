@@ -7,7 +7,7 @@ Você já usa o GitHub diariamente para desenvolver os exercícios, certo? Agora
 Aqui você vai encontrar os detalhes de como estruturar o desenvolvimento do seu projeto a partir deste repositório, utilizando uma branch específica e um _Pull Request_ para colocar seus códigos.
 
 
-# Habilidades 
+# Habilidades
 Neste projeto, verificamos se voce é capaz de:
 
   * Criar um store Redux em aplicações React
@@ -58,9 +58,9 @@ Através dessa aplicação, será possível realizar as operações básicas de 
 ### ANTES DE COMEÇAR A DESENVOLVER:
 
 1. Clone o repositório
-  * `git clone git@github.com:tryber/sd-0X-project-trybe-wallet.git`.
+  * `git clone git@github.com:tryber/sd-0x-project-trybewallet.git`.
   * Entre na pasta do repositório que você acabou de clonar:
-    * `cd sd-0X-project-trybe-wallet`
+    * `cd sd-0x-project-trybewallet`
 
 2. Instale as dependências e inicialize o projeto
   * Instale as dependências:
@@ -94,14 +94,14 @@ Através dessa aplicação, será possível realizar as operações básicas de 
 
 ---
 
-### DEPOIS DE TERMINAR O DESENVOLVIMENTO
+### DEPOIS DE TERMINAR O DESENVOLVIMENTO (OPCIONAL)
 
 Para **"entregar"** seu projeto, siga os passos a seguir:
 
 * Vá até a página **DO SEU** _Pull Request_, adicione a label de _"code-review"_ e marque seus colegas
   * No menu à direita, clique no _link_ **"Labels"** e escolha a _label_ **code-review**
   * No menu à direita, clique no _link_ **"Assignees"** e escolha **o seu usuário**
-  * No menu à direita, clique no _link_ **"Reviewers"** e digite `students`, selecione o time `tryber/students-sd-0X`
+  * No menu à direita, clique no _link_ **"Reviewers"** e digite `students`, selecione o time `tryber/students-sd-0x`
 
 ---
 
@@ -167,7 +167,7 @@ npm test
 
 Aqui encontram-se os requisitos do projeto. Em cada requisito você encontrara uma imagem de um protótipo de como sua aplicação deve ficar. Estilo da página não será avaliado.
 
-⚠ **PULL REQUESTS COM ISSUES NO CODE CLIMATE NÃO SERÃO AVALIADAS, ATENTE-SE PARA RESOLVÊ-LAS ANTES DE FINALIZAR O DESENVOLVIMENTO!** ⚠
+⚠ **PULL REQUESTS COM ISSUES NO LINTER NÃO SERÃO AVALIADAS, ATENTE-SE PARA RESOLVÊ-LAS ANTES DE FINALIZAR O DESENVOLVIMENTO!** ⚠
 
 ### Página de Login
 
@@ -179,7 +179,7 @@ Crie uma página para que a pessoa usuária se identifique, com email e senha. E
 
   * A rota para esta página deve ser ‘/’.
 
-  * Você deve criar um local para que o usuário insira seu email e senha. Utilize o atributo `data-testid="email-input"` para o email e `data-testid="password-input"` para a senha.
+  * Você deve criar um local para que a pessoa usuária insira seu email e senha. Utilize o atributo `data-testid="email-input"` para o email e `data-testid="password-input"` para a senha.
 
   * Crie um botão com o texto ‘Entrar’.
 
@@ -189,7 +189,7 @@ Crie uma página para que a pessoa usuária se identifique, com email e senha. E
 
     * A senha é maior que 6 caracteres.
 
-  * Salve o email no estado da aplicação, com a chave ***email***, assim que o usuário logar.
+  * Salve o email no estado da aplicação, com a chave ***email***, assim que a pessoa usuária logar.
 
   * A rota deve ser mudada para '/carteira' após o clique no botão '**Entrar**'.
 
@@ -213,7 +213,7 @@ Crie uma página para gerenciar a carteira de gastos em diversas moedas, e que t
 
 3. Crie um header para a página de carteira contendo as seguintes características:
 
-  * Um elemento que exiba o email do usuário que fez login.
+  * Um elemento que exiba o email da pessoa usuária que fez login.
 
     * Adicione o atributo `data-testid="email-field"`.
 
@@ -221,7 +221,7 @@ Crie uma página para gerenciar a carteira de gastos em diversas moedas, e que t
   Dica: você deve pegar o email do estado global da aplicação (no Redux)
   ```
 
-  * Um campo com a despesa total gerada pela lista de gastos. 
+  * Um campo com a despesa total gerada pela lista de gastos.
 
     * Adicione o atributo `data-testid="total-field"`.
 
@@ -247,7 +247,7 @@ Crie uma página para gerenciar a carteira de gastos em diversas moedas, e que t
 
     * Adicione o atributo `data-testid="currency-input"`.
 
-    * Este campo deve ser um dropdown. O usuário deve poder escolher entre os campos: 'USD', 'CAD', 'EUR', 'GBP', 'ARS', 'BTC', 'LTC', 'JPY', 'CHF', 'AUD', 'CNY', 'ILS', 'ETH' e 'XRP'.
+    * Este campo deve ser um dropdown. a pessoa usuária deve poder escolher entre os campos: 'USD', 'CAD', 'EUR', 'GBP', 'ARS', 'BTC', 'LTC', 'JPY', 'CHF', 'AUD', 'CNY', 'ILS', 'ETH' e 'XRP'.
 
     * Os valores do campo de moedas devem ser puxados através da requisição à API.
 
@@ -265,7 +265,7 @@ Crie uma página para gerenciar a carteira de gastos em diversas moedas, e que t
 
   * Um campo para selecionar uma categoria (tag) para a despesa.
 
-    * Este campo deve ser um dropdown. O usuário deve poder escolher entre os campos: 'Alimentação', 'Lazer', 'Trabalho', 'Transporte' e 'Saúde'.
+    * Este campo deve ser um dropdown. a pessoa usuária deve poder escolher entre os campos: 'Alimentação', 'Lazer', 'Trabalho', 'Transporte' e 'Saúde'.
 
     * Adicione o atributo `data-testid="tag-input"`.
 
@@ -379,7 +379,7 @@ Crie uma página para gerenciar a carteira de gastos em diversas moedas, e que t
           "ask": "1.4",
           ...
         }
-      } 
+      }
     }]
     ```
 
@@ -431,6 +431,6 @@ Ao finalizar e submeter o projeto, não se esqueça de avaliar sua experiência 
 
 Link: [FORMULÁRIO DE AVALIAÇÃO DE PROJETO](https://be-trybe.typeform.com/to/ZTeR4IbH#cohort_name=Turma%205)
 
-O avaliador automático não necessariamente avalia seu projeto na ordem em que os requisitos aparecem no readme. Isso acontece para deixar o processo de avaliação mais rápido. Então, não se assuste se isso acontecer, ok? 
+O avaliador automático não necessariamente avalia seu projeto na ordem em que os requisitos aparecem no readme. Isso acontece para deixar o processo de avaliação mais rápido. Então, não se assuste se isso acontecer, ok?
 
 ---

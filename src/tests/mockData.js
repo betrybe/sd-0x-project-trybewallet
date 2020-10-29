@@ -1,4 +1,4 @@
-const response = {
+export const response = {
   USD: {
     code: 'USD',
     codein: 'BRL',
@@ -196,4 +196,76 @@ const response = {
   },
 };
 
-export default response;
+export const initialStateHeader = {
+  user: {
+    email: 'alguem@email.com',
+  },
+  wallet: {
+    currencies: [
+      'USD',
+      'USDT',
+      'CAD',
+      'EUR',
+      'GBP',
+      'ARS',
+      'BTC',
+      'LTC',
+      'JPY',
+      'CHF',
+      'AUD',
+      'CNY',
+      'ILS',
+      'ETH',
+      'XRP',
+    ],
+    expenses: [],
+  },
+};
+
+export const initialStateWithExpenses = {
+  user: {
+    email: 'alguem@email.com',
+  },
+  wallet: {
+    isFetching: false,
+    editor: false,
+    idToEdit: 0,
+    currencyToExchange: 'BRL',
+    currencies: [
+      'USD',
+      'CAD',
+      'EUR',
+      'GBP',
+      'ARS',
+      'BTC',
+      'LTC',
+      'JPY',
+      'CHF',
+      'AUD',
+      'CNY',
+      'ILS',
+      'ETH',
+      'XRP',
+    ],
+    expenses: [
+      {
+        id: 0,
+        value: '10',
+        currency: 'USD',
+        method: 'Cartão de crédito',
+        tag: 'Lazer',
+        description: 'Dez dólares',
+        exchangeRates: response,
+      },
+      {
+        id: 1,
+        value: '20',
+        currency: 'EUR',
+        method: 'Dinheiro',
+        tag: 'Trabalho',
+        description: 'Vinte euros',
+        exchangeRates: response,
+      },
+    ],
+  },
+};

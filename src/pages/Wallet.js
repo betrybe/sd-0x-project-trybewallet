@@ -16,10 +16,9 @@ class Wallet extends React.Component {
     this.state = {
       value: '',
       description: '',
-      currency: 'USD',
-      method: 'Dinheiro',
-      tag: 'Alimentação',
-      selectedCurrency: 'USD',
+      currency: '',
+      method: '',
+      tag: '',
       editMode: false,
     };
 
@@ -67,32 +66,7 @@ class Wallet extends React.Component {
         <header>
           <span data-testid="email-field">{ email }</span>
           <span data-testid="total-field">0</span>
-          <span data-testid="header-currency-field">
-            <label htmlFor="currency">
-              Moeda:
-              <select
-                name="selectedCurrency"
-                id="currency"
-                value={ expense.selectedCurrency }
-                data-testid="currency-input"
-                onChange={ this.handleChange }
-              >
-                {
-                  currencies && currencies.map(
-                    (currency) => (
-                      <option
-                        data-testid={ currency }
-                        key={ currency }
-                        value={ currency }
-                      >
-                        { currency }
-                      </option>
-                    ),
-                  )
-                }
-              </select>
-            </label>
-          </span>
+          <span data-testid="header-currency-field">BRL</span>
         </header>
         <form onSubmit={ this.handleSubmit }>
           <label htmlFor="value">
