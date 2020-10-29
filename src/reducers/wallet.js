@@ -15,7 +15,20 @@ export default function userReducer(state = initialState, action) {
   case 'ADD_EXPENSE':
     return {
       ...state,
-      expenses: [...state.expenses, action.expenses],
+      expenses: [...state.expenses, action.expense],
+    };
+  case 'DELETE_EXPENSE':
+    return {
+      ...state,
+      expenses: state.expenses.filter((e) => e.id !== action.id),
+    };
+  case 'EDIT_EXPENSE':
+    return {
+      ...state,
+      expenses: state.expenses
+        .map((e) => (
+          e.id === action.expense.id ? { ...e, ...action.expense } : e
+        )),
     };
   default:
     return state;

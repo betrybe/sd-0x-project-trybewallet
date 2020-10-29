@@ -55,7 +55,7 @@
       "error",
       {"allowRequiredDefaults": false}
     ],
-    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
+    "react/no-array-index-key": ["off"],
     "react/destructuring-assignment": ["error", "always"],
     "react/forbid-component-props": ["error"],
     "react/forbid-prop-types": ["error"],

@@ -1,18 +1,26 @@
+Ao iniciar este projeto, você concorda com as diretrizes do Código de Ética e Conduta e do Manual da Pessoa Estudante da Trybe.
+
 # Boas vindas ao repositório do projeto Trybe Wallet!
 
 Você já usa o GitHub diariamente para desenvolver os exercícios, certo? Agora, para desenvolver os projetos, você deverá seguir as instruções a seguir. Fique atento a cada passo, e se tiver qualquer dúvida, nos envie por _Slack_! #vqv 🚀
 
 Aqui você vai encontrar os detalhes de como estruturar o desenvolvimento do seu projeto a partir deste repositório, utilizando uma branch específica e um _Pull Request_ para colocar seus códigos.
 
-### Entrega
 
-  - Projeto individual.
+# Habilidades 
+Neste projeto, verificamos se voce é capaz de:
 
-  - Serão três dias de projeto.
-  
-  - O projeto tem até a seguinte data: `DD/MM/YYYY - 14:00h`. Para ser entregue a avaliação final.
+  * Criar um store Redux em aplicações React
 
----
+  * Criar reducers no Redux em aplicações React
+
+  * Criar actions no Redux em aplicações React
+
+  * Criar dispatchers no Redux em aplicações React
+
+  * Conectar Redux aos componentes React
+
+  * Criar actions assíncronas na sua aplicação React que faz uso de Redux.
 
 # Entregáveis
 
@@ -35,20 +43,67 @@ Você deve desenvolver uma aplicação em React que use Redux como ferramenta de
 
 Através dessa aplicação, será possível realizar as operações básicas de criação e manipulação de um estado de redux.
 
-## Você deverá mostrar as seguintes proficiências no projeto:
+### Data de Entrega
 
+  - Projeto individual.
 
-  * Criar um store Redux em aplicações React
+  - Serão dois dias de projeto.
+  
+  - O projeto tem até a seguinte data: `DD/MM/YYYY - 14:00h`. Para ser entregue a avaliação final.
 
-  * Criar reducers no Redux em aplicações React
+---
 
-  * Criar actions no Redux em aplicações React
+## Instruções para entregar seu projeto:
 
-  * Criar dispatchers no Redux em aplicações React
+### ANTES DE COMEÇAR A DESENVOLVER:
 
-  * Conectar Redux aos componentes React
+1. Clone o repositório
+  * `git clone git@github.com:tryber/sd-0X-project-trybe-wallet.git`.
+  * Entre na pasta do repositório que você acabou de clonar:
+    * `cd sd-0X-project-trybe-wallet`
 
-  * Criar actions assíncronas na sua aplicação React que faz uso de Redux.
+2. Instale as dependências e inicialize o projeto
+  * Instale as dependências:
+    * `npm install`
+  * Inicialize o projeto:
+    * `npm start` (uma nova página deve abrir no seu navegador com um texto simples)
+  * Verifique que os testes estão executando:
+    * `npm test` (os testes devem rodar e falhar)
+
+3. Crie uma branch a partir da branch `master`
+
+  * Verifique que você está na branch `master`
+    * Exemplo: `git branch`
+  * Se não estiver, mude para a branch `master`
+    * Exemplo: `git checkout master`
+  * Agora, crie uma branch onde você vai guardar os commits do seu projeto
+---
+
+### DURANTE O DESENVOLVIMENTO
+
+* Faça `commits` das alterações que você fizer no código regularmente
+
+* Lembre-se de sempre após um (ou alguns) `commits` atualizar o repositório remoto
+
+* Os comandos que você utilizará com mais frequência são:
+  1. `git status` _(para verificar o que está em vermelho - fora do stage - e o que está em verde - no stage)_
+  2. `git add` _(para adicionar arquivos ao stage do Git)_
+  3. `git commit` _(para criar um commit com os arquivos que estão no stage do Git)_
+  4. `git push -u nome-da-branch` _(para enviar o commit para o repositório remoto na primeira vez que fizer o `push` de uma nova branch)_
+  5. `git push` _(para enviar o commit para o repositório remoto após o passo anterior)_
+
+---
+
+### DEPOIS DE TERMINAR O DESENVOLVIMENTO
+
+Para **"entregar"** seu projeto, siga os passos a seguir:
+
+* Vá até a página **DO SEU** _Pull Request_, adicione a label de _"code-review"_ e marque seus colegas
+  * No menu à direita, clique no _link_ **"Labels"** e escolha a _label_ **code-review**
+  * No menu à direita, clique no _link_ **"Assignees"** e escolha **o seu usuário**
+  * No menu à direita, clique no _link_ **"Reviewers"** e digite `students`, selecione o time `tryber/students-sd-0X`
+
+---
 
 ## Documentação da API de Cotações de Moedas
 
@@ -92,7 +147,7 @@ Na descrição dos requisitos (logo abaixo) será pedido que seja feita a adiç�
 Se o requisito pedir "crie um botão e adicione o id de teste (ou `data-testid`) com o valor `my-action`, você pode criar:
 
 ```html
-<button data-testid="my-action" ></button>
+<button data-testid="my-action"></button>
 ```
 
 ou
@@ -220,8 +275,17 @@ Crie uma página para gerenciar a carteira de gastos em diversas moedas, e que t
 
     * Desenvolva a funcionalidade do botão "Adicionar despesa" de modo que ao clicar no botão, as seguintes ações sejam executadas:
     
-    * Os valores dos campos devem ser salvos no estado da aplicação, na chave ***expenses***, dentro de um array contendo todos gastos que serão adicionados. Crie um id, e estruture as informações de cada despesa em objetos como este:
+    * Os valores dos campos devem ser salvos no estado da aplicação, na chave ***expenses***, dentro de um array contendo todos gastos que serão adicionados:
 
+      * O `id` da despesa **deve** ser um número sequencial, começando em 0. Ou seja: a primeira despesa terá id 0, a segunda terá id 1, a terceira id 2, e assim por diante.
+
+      * Você deverá salvar a cotação do câmbio feita no momento da adição para ter esse dado quando for efetuar uma edição do gasto. Caso você não tenha essa informação salva, o valor da cotação trazida poderá ser diferente do obtido anteriormente.
+
+    ```
+    Atenção nesse ponto: você deverá fazer uma requisição para API e buscar a cotação no momento que o botão de `Adicionar despesa` for apertado. Para isso você deve utilizar um thunk
+    ```
+
+    As despesas salvas no Redux ficarão com um formato semelhante ao seguinte:
     ```
     expenses: [{
       "id": 0,
@@ -317,204 +381,56 @@ Crie uma página para gerenciar a carteira de gastos em diversas moedas, e que t
         }
       } 
     }]
-    ``` 
-
-    Salvaremos a cotação do câmbio feita no momento da adição para termos esse dado caso precisemos efetuar uma edição desse gasto com a mesma cotação do momento da adição. Caso não tivessemos esta informação salva, o valor da cotação trazida poderia ser diferente da obtida anteriormente.
-
+    ```
 
 #### Tabela de Gastos
 
-5. Desenvolver uma tabela com os gastos. 
+5. Crie uma tabela que exiba as despesas cadastradas contendo as seguintes características: 
 
-  * A tabela deve ser alimentada pelo estado da aplicação, que estará disponível na chave ***expenses***.
-  * Crie uma tabela que possua como cabeçalho os campos: Descrição, Tag, Método de pagamento, Valor, Moeda, Câmbio Utilizado, Valor Convertido, Moeda de Conversão e Editar/Deletar.
+  * Os campos de cabeçalho da tabela devem ter **exatamente** os valores: Descrição, Tag, Método de pagamento, Valor, Moeda, Câmbio utilizado, Valor convertido, Moeda de conversão e Editar/Deletar
 
-    * Para cada **th** utilizado para criar a tabela, coloque o atributo *data-testid* com o mesmos valores acima. Por exemplo, *data-testid = 'Descrição'*
+  * A tabela deve ser alimentada pelo estado da aplicação, que estará disponível na chave ***expenses*** que vem do reducer `wallet`.
 
-    * O campo de Editar/Deletar deve conter os dois botões, de Editar e Deletar. 
+    * O campo de Moeda e Moeda de Conversão deverão conter o nome da moeda. Portanto, ao invés de 'USD' ou 'EUR', deve conter "Dólar Comercial" e "Euro", respectivamente
 
-  * Crie um atributo *data-testid* com o index utilizado na confecção de cada linha de gasto da tabela. Utilize os seguintes formatos:
+    * Por padrão, o campo 'Moeda de conversão' exibirá 'Real'
 
-    *data-testid = '${index}-description'*
+    * Atenção também às casas decimais dos campos. Como são valores contábeis, eles devem apresentar duas casas após a vírgula. Arredonde sua resposta somente na hora de renderizar o resultado, e para os cálculos utilize sempre os valores vindos da API (utilize o campo `ask` que vem da API).
 
-    *data-testid = '${index}-tag'*
+    * Utilize sempre o formato `0.00` (número - ponto - duas casas decimais)
 
-    *data-testid = '${index}-method'*
 
-    *data-testid = '${index}-value'*
-
-    *data-testid = '${index}-currency'*
-
-    *data-testid = '${index}-exchange-rate'*
-
-    *data-testid = '${index}-exchanged-value'*
-
-    *data-testid = '${index}-exc-currency-name'*
-
-    *data-testid = '${index}-edit-delete'* ( este campo terá mais dois atributos data-testid, uma para cada botão, que serão adicionados mais à frente)
-
-    * O campo de Moeda e Moeda de Conversão deverão conter o nome da moeda. Portanto, ao invés de 'USD' ou 'EUR', deve conter "Dólar Comercial" e "Euro", respectivamente.
-    
-    * Atenção também às casas decimais dos campos. Como são valores contábeis, eles devem apresentar duas casas após a vírgula. Arredonde sua respota somente na hora de renderizar o resultado, e para os cálculos utilize sempre os valores vindos da API.
-
-6. Incremente a função de remover uma linha de gastos da tabela no botão de deletar.
+6. Crie um botão para deletar uma despesa da tabela contendo as seguintes características:
 
     ![image](btnExcluir.gif)
 
-  * Adicione o atributo *data-testid = '${index}-delete-btn'* ao botão de deletar.
+  * O botão deve ser o último item da linha da tabela e deve possuir `data-testid="delete-btn"`.
 
-  * Desenvolva esse botão de modo que ele remova a informação da tabela e do estado da aplicação.
-
-7. Incremente a função de alterar uma linha de gastos da tabela no botão de editar. 
-
-    ![image](btnEditar.gif)
-
-  * Os campos a serem alterados devem ser o mesmos encontrados no formulário de adicionar. Adicione os seguintes atributos *data-testid* a eles.
-
-    * Para o campo que efetuará mudança no valor: *data-testid = 'e-value-input'*
-
-    * Para o campo que efetuará mudança no valor: *data-testid = 'e-currency-input'*
-
-    * Para o campo que efetuará mudança no valor: *data-testid = 'e-method-input'*
-
-    * Para o campo que efetuará mudança no valor: *data-testid = 'e-tag-input'*
-
-    * Para o campo que efetuará mudança no valor: *data-testid = 'e-description-input'*
-
-**Atenção**: o câmbio utilizado na edição deve ser o mesmo do cálculo feito na adição do gasto.
-
-  * Adicione o atributo *data-testid = '${index}-edit-btn'* ao botão de editar.
-
-  * Desenvolva esse botão de modo que ele edite a informação da tabela e do estado da aplicação.
+  * Ao ser clicado, o botão deleta a linha da tabela, alterando o estado global.
 
 ### Bônus
 
-8.  Adicione um dropdown no Header, como um campo de moeda utilizada, de maneira que o resultado das somas, de **gastos totais e do valor convertido de cada linha**, seja convertido para a moeda escolhida.
+7. Crie um botão para editar uma despesa da tabela contendo as seguintes características:
 
-    ![image](bonusDropdown.gif)
+    ![image](btnEditar.gif)
 
+  * O botão deve estar dentro do último item da linha da tabela e deve possuir `data-testid="edit-btn"`
 
-    * Transforme o campo que possui o *data-testid = 'header-currency-field'* em um dropdown, contendo os valores 'BRL', 'USD', 'CAD', 'EUR', 'GBP', 'ARS', 'BTC', 'LTC', 'JPY', 'CHF', 'AUD', 'CNY', 'ILS', 'ETH' e 'XRP'.
+  * Ao ser clicado, o botão habilita um formulário para editar a linha da tabela. Ao clicar em "Editar despesa" ela é atualizada, alterando o estado global.
 
-    * Salve a moeda selecionada no estado da aplicação, em uma chave ***currencyToExchange***
+    * O formulário deverá ter os mesmos `data-testid` do formulário de adicionar despesa. Você pode reaproveitá-lo.
 
-    * Quando escolhermos uma moeda diferente da padrão, que deve ser 'BRL', o valor da conversão de cada linha deve ser alterado, juntamente com a soma total das despesas no Header. Deve ser utilizada a cotação salva no momento da adição do gasto para o novo cálculo. 
+    * O botão para submeter a despesa para edição deverá conter **exatamente** o texto "Editar despesa"
 
-
-9. As informações disponíveis na tabela devem ser salvas no localStorage, na chave ***expenses*** e o email na chave ***email***, de forma que será possível manter as informações principais caso feche a aba ou atualize a página.
-
-    * As informações devem estar renderizadas para a pessoa usuária e também disponíveis no estado da aplicação, nas mesmas chaves usadas anteriormente.
-
+    **Atenção**: o câmbio utilizado na edição deve ser o mesmo do cálculo feito na adição do gasto.
 
 ---
+# Avisos Finais
 
-## Instruções para entregar seu projeto:
+Ao finalizar e submeter o projeto, não se esqueça de avaliar sua experiência preenchendo o formulário. Leva menos de 3 minutos!
 
-### ANTES DE COMEÇAR A DESENVOLVER:
+Link: [FORMULÁRIO DE AVALIAÇÃO DE PROJETO](https://be-trybe.typeform.com/to/ZTeR4IbH#cohort_name=Turma%205)
 
-1. Clone o repositório
-  * `git clone git@github.com:tryber/sd-0X-project-trybe-wallet.git`.
-  * Entre na pasta do repositório que você acabou de clonar:
-    * `cd sd-0X-project-trybe-wallet`
-
-2. Instale as dependências e inicialize o projeto
-  * Instale as dependências:
-    * `npm install`
-  * Inicialize o projeto:
-    * `npm start` (uma nova página deve abrir no seu navegador com um texto simples)
-
-3. Faça alterações separadas por novas branchs criadas a partir da branch `master`, criando uma nova branch para cada demanda
-  * Verifique que você está na branch `master`
-    * Exemplo: `git branch`
-  * Se não estiver, mude para a branch `master`
-    * Exemplo: `git checkout master`
-  * Agora, crie uma branch para a demanda que você vai desenvolver do seu projeto
-    * Você deve criar uma branch com uma breve descrição da demanda a ser desenvolvida
-    * Exemplo: `git checkout -b criar-page-carteira`
-
-4. Crie um diretório `pages` dentro de `src` e crie suas páginas dentro deste diretório. Por exemplo, crie uma página `Carteira`:
-
-```sh
-mkdir src/pages
-touch src/pages/Carteira.js
-```
-
-```javascript
-import React from 'react';
-
-const Carteira = () => <div>Carteira de gastos com conversão de moedas</div>;
-
-export default Carteira;
-```
-
-5. Adicione as mudanças ao _stage_ do Git e faça um `commit`
-  * Verifique que as mudanças ainda não estão no _stage_
-    * Exemplo: `git status` (devem aparecer listadas as novas alterações em vermelho)
-  * Adicione o arquivo alterado ao _stage_ do Git
-      * Exemplo:
-        * `git add .` (adicionando todas as mudanças - _que estavam em vermelho_ - ao stage do Git)
-        * `git status` (devem aparecer listadas as novas alterações em verde)
-  * Faça seus `commit`
-      * Exemplo:
-        * `git commit -m 'criando page Carteira`
-        * `git status` (deve aparecer uma mensagem tipo _nothing to commit_ )
-
-6. Adicione a sua branch com o novo `commit` ao repositório remoto
-  * Usando o exemplo anterior: `git push -u origin criar-page-carteira`
-
-7. Crie um novo `Pull Request` _(PR)_
-  * Vá até a página de _Pull Requests_ do [repositório no GitHub](https://github.com/tryber/sd-04-project-trybe-wallet/pulls)
-  * Clique no botão verde _"New pull request"_
-  * Clique na caixa de seleção _"Compare"_ e escolha a branch do grupo e a sua branch **com atenção**
-  * Clique no botão verde _"Create pull request"_
-  * Adicione uma descrição para o _Pull Request_ e clique no botão verde _"Create pull request"_
-  * **Não se preocupe em preencher mais nada por enquanto!**
-  * Volte até a [página de _Pull Requests_ do repositório](https://github.com/tryber/sd-04-project-trybe-wallet/pulls) e confira que o seu _Pull Request_ está criado
-
-8. Após finalizar as alterações do seu _Pull Request_:
-  * Vá até a página **DO SEU** _Pull Request_, adicione a label de _"code-review"_ e marque as pessoas do seu grupo
-  * No menu à direita, clique no _link_ **"Labels"** e escolha a _label_ **code-review**
-  * No menu à direita, clique no _link_ **"Assignees"** e escolha **o seu usuário**
-  * No menu à direita, clique no _link_ **"Reviewers"** e selecione dois membros do seu grupo
-
-9. Assim que aprovado por pelo menos duas pessoas do seu grupo e o _Code Climate_ estiver adereçado, acesse **SEU** _Pull Request_ e clique no botão _"Merge pull request"_
+O avaliador automático não necessariamente avalia seu projeto na ordem em que os requisitos aparecem no readme. Isso acontece para deixar o processo de avaliação mais rápido. Então, não se assuste se isso acontecer, ok? 
 
 ---
-
-### DURANTE O DESENVOLVIMENTO
-
-* Faça `commits` das alterações que você fizer no código regularmente
-
-* Lembre-se de sempre após um (ou alguns) `commits` atualizar o repositório remoto
-
-* Os comandos que você utilizará com mais frequência são:
-  1. `git status` _(para verificar o que está em vermelho - fora do stage - e o que está em verde - no stage)_
-  2. `git add` _(para adicionar arquivos ao stage do Git)_
-  3. `git commit` _(para criar um commit com os arquivos que estão no stage do Git)_
-  4. `git push -u nome-da-branch` _(para enviar o commit para o repositório remoto na primeira vez que fizer o `push` de uma nova branch)_
-  5. `git push` _(para enviar o commit para o repositório remoto após o passo anterior)_
-
----
-
-### DEPOIS DE TERMINAR O DESENVOLVIMENTO
-
-Para **"entregar"** seu projeto, siga os passos a seguir:
-
-* Vá até a página **DO SEU** _Pull Request_, adicione a label de _"code-review"_ e marque seus colegas
-  * No menu à direita, clique no _link_ **"Labels"** e escolha a _label_ **code-review**
-  * No menu à direita, clique no _link_ **"Assignees"** e escolha **o seu usuário**
-  * No menu à direita, clique no _link_ **"Reviewers"** e digite `students`, selecione o time `tryber/students-sd-0X`
-
-Se ainda houver alguma dúvida sobre como entregar seu projeto, [aqui tem um video explicativo](https://vimeo.com/362189205).
-
-⚠ Lembre-se que garantir que todas as _issues_ comentadas pelo CodeClimate estão resolvidas! ⚠
-
----
-
-### REVISANDO UM PULL REQUEST
-
-⚠⚠⚠
-
-À medida que você e as outras pessoas que estudam na Trybe forem entregando os projetos, vocês receberão um alerta via Slack para também fazer a revisão dos Pull Requests dos seus colegas. Fiquem atentos às mensagens do "Pull Reminders" no Slack!
-
-Use o material que você já viu sobre [Code Review](https://course.betrybe.com/real-life-engineer/code-review/) para te ajudar a revisar os projetos que chegaram para você.
