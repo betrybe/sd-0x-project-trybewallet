@@ -1,10 +1,5 @@
-// Implemente aqui seu reducer
+// import user from './user';
+// import wallet from './wallet';
 
-const INITIAL_STATE = {};
-
-function reducer(state = INITIAL_STATE, action) {
-  switch (action.type) {
-    default:
-      return state;
-  }
-}
+// Configure os seus reducers.
+// ATENÇÃO: você obrigatoriamente tem que utilizar as chaves "user" e "wallet" no seu estado global

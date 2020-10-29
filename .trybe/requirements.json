@@ -3,25 +3,19 @@
     "description": "1 - [PÁGINA DE LOGIN] Crie uma página inicial de login com os seguintes campos e características:",
     "bonus": false
   }, {
-    "description": "2 - [PAGINA DA CARTEIRA] Crie um header para a página com as seguintes informações:",
+    "description": "2 - [PÁGINA DA CARTEIRA] Crie uma página para sua carteira com as seguintes características:",
     "bonus": false
   }, {
-    "description": "3 - [PAGINA DA CARTEIRA] Desenvolva um formulário para adicionar uma despesa",
+    "description": "3 - [PÁGINA DA CARTEIRA] Crie um header para a página de carteira contendo as seguintes características:",
     "bonus": false
   }, {
-    "description": "4 - [PAGINA DA CARTEIRA] Desenvolver uma tabela com os gastos",
+    "description": "5 - [PÁGINA DA CARTEIRA] Desenvolva uma tabela com os gastos contendo as seguintes características:",
     "bonus": false
   }, {
-    "description": "5 - [PAGINA DA CARTEIRA] Incremente a função de deletar uma linha de gastos da tabela no botão de deletar.",
+    "description": "6 - [PÁGINA DA CARTEIRA] Crie um botão para deletar uma despesa da tabela contendo as seguintes características:",
     "bonus": false
   }, {
-    "description": "6 - [PAGINA DA CARTEIRA] Incremente a função de alterar uma linha de gastos da tabela no botão de editar.",
-    "bonus": false
-  }, {
-    "description": "7 - [BÔNUS] Adicione um dropdown no Header, como um campo de moeda utilizada, de maneira que o resultado das somas, de gastos totais e do valor convertido de cada linha, seja convertido para a moeda escolhida.",
-    "bonus": true
-  }, {
-    "description": "8 - [BÔNUS] As informações disponíveis na tabela devem ser salvas no localStorage, na chave expenses e o email na chave email, desta forma será possível manter as informações principais caso feche a aba ou atualize a página.",
+    "description": "7 - [BÔNUS] Crie um botão para editar uma despesa da tabela contendo as seguintes características:",
     "bonus": true
   }]
 }

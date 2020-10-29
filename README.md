@@ -47,8 +47,8 @@ Através dessa aplicação, será possível realizar as operações básicas de 
 
   - Projeto individual.
 
-  - Serão três dias de projeto.
-
+  - Serão dois dias de projeto.
+  
   - O projeto tem até a seguinte data: `DD/MM/YYYY - 14:00h`. Para ser entregue a avaliação final.
 
 ---
@@ -105,8 +105,6 @@ Para **"entregar"** seu projeto, siga os passos a seguir:
 
 ---
 
-
-
 ## Documentação da API de Cotações de Moedas
 
 Sua página _web_ irá consumir os dados da API do _awesomeapi API de Cotações_ para realizar a busca de câmbio de moedas. Para realizar essas buscas, vocês precisarão consultar o seguinte _endpoint_:
@@ -149,7 +147,7 @@ Na descrição dos requisitos (logo abaixo) será pedido que seja feita a adiç�
 Se o requisito pedir "crie um botão e adicione o id de teste (ou `data-testid`) com o valor `my-action`, você pode criar:
 
 ```html
-<button data-testid="my-action" ></button>
+<button data-testid="my-action"></button>
 ```
 
 ou
@@ -171,13 +169,31 @@ Aqui encontram-se os requisitos do projeto. Em cada requisito você encontrara u
 
 ⚠ **PULL REQUESTS COM ISSUES NO LINTER NÃO SERÃO AVALIADAS, ATENTE-SE PARA RESOLVÊ-LAS ANTES DE FINALIZAR O DESENVOLVIMENTO!** ⚠
 
+### Antes de começar
+
+Nessa aplicação você deverá **obrigatoriamente** utilizar o seguinte formato do estado global:
+
+```
+{
+  user: {
+    email: '',
+  },
+  wallet: {
+    currencies: [],
+    expenses: []
+  }
+}
+```
+
+É importante respeitar esse formato para que o avaliador funcione corretamente. Você pode adicionar novos campos ao seu estado global, mas essa estrutura básica deve se manter. Por exemplo, você pode adicionar uma propriedade `isFetching` no seu estado. Mas você **não** pode salvar as despesas em uma chave diferente de `wallet.expenses`.
+
 ### Página de Login
 
 Crie uma página para que a pessoa usuária se identifique, com email e senha. Esta página deve ser a página inicial de seu aplicativo.
 
   ![image](login.gif)
 
-1. Crie uma página inicial de login com os seguintes campos para inserir email e senha.
+1. Crie uma página inicial de login com os seguintes campos e características:
 
   * A rota para esta página deve ser ‘/’.
 
@@ -189,7 +205,7 @@ Crie uma página para que a pessoa usuária se identifique, com email e senha. E
 
     * O email está no formato válido, como 'alguem@alguem.com'.
 
-    * A senha é maior que 6 caracteres.
+    * A senha possui 6 ou mais caracteres.
 
   * Salve o email no estado da aplicação, com a chave ***email***, assim que a pessoa usuária logar.
 
@@ -197,7 +213,7 @@ Crie uma página para que a pessoa usuária se identifique, com email e senha. E
 
 ### Página da Carteira
 
-Crie uma página para gerenciar a carteira de gastos em diversas moedas, e que traga a despesa total em uma moeda só. Esta página deve ser renderizada por um componente chamado ***Carteira***.
+Crie uma página para gerenciar a carteira de gastos em diversas moedas, e que traga a despesa total em uma moeda só. Esta página deve ser renderizada por um componente chamado ***Wallet***.
 
   ![image](carteira.gif)
 
@@ -257,8 +273,8 @@ Crie uma página para gerenciar a carteira de gastos em diversas moedas, e que t
 
       * O endpoint utilizado deve ser: https://economia.awesomeapi.com.br/json/all .
 
-      * Remova das informações trazidas pela API a opção 'USDT' (Dólar Turismo).
-
+      * Remova das informações trazidas pela API a opção 'USDT' (Dólar Turismo). 
+    
   * Um campo para adicionar qual método de pagamento será utilizado.
 
     * Adicione o atributo `data-testid="method-input"`.
@@ -273,12 +289,23 @@ Crie uma página para gerenciar a carteira de gastos em diversas moedas, e que t
 
     * Ao ser clicado, o botão deve fazer uma requisição à API para trazer o câmbio mais atualizado possível.
 
-  * Um botão com o texto \'Adicionar despesa\' que salva as informações da despesa no estado global.
+  * Um botão com o texto \'Adicionar despesa\' que salva as informações da despesa no estado global e atualiza a soma de despesas no header.
 
     * Desenvolva a funcionalidade do botão "Adicionar despesa" de modo que ao clicar no botão, as seguintes ações sejam executadas:
+    
+    * Os valores dos campos devem ser salvos no estado da aplicação, na chave ***expenses***, dentro de um array contendo todos gastos que serão adicionados:
 
-    * Os valores dos campos devem ser salvos no estado da aplicação, na chave ***expenses***, dentro de um array contendo todos gastos que serão adicionados. Crie um id, e estruture as informações de cada despesa em objetos como este:
+      * O `id` da despesa **deve** ser um número sequencial, começando em 0. Ou seja: a primeira despesa terá id 0, a segunda terá id 1, a terceira id 2, e assim por diante.
 
+      * Você deverá salvar a cotação do câmbio feita no momento da adição para ter esse dado quando for efetuar uma edição do gasto. Caso você não tenha essa informação salva, o valor da cotação trazida poderá ser diferente do obtido anteriormente.
+
+    ```
+    Atenção nesse ponto: você deverá fazer uma requisição para API e buscar a cotação no momento que o botão de `Adicionar despesa` for apertado. Para isso você deve utilizar um thunk
+    ```
+
+    * Após adicionar a despesa, atualize a soma total das despesas. Essa informação deve ficar no header dentro do elemento com `data-testid="total-field"`
+
+    As despesas salvas no Redux ficarão com um formato semelhante ao seguinte:
     ```
     expenses: [{
       "id": 0,
@@ -376,92 +403,46 @@ Crie uma página para gerenciar a carteira de gastos em diversas moedas, e que t
     }]
     ```
 
-    Salvaremos a cotação do câmbio feita no momento da adição para termos esse dado caso precisemos efetuar uma edição desse gasto com a mesma cotação do momento da adição. Caso não tivessemos esta informação salva, o valor da cotação trazida poderia ser diferente da obtida anteriormente.
-
-
 #### Tabela de Gastos
 
-5. Desenvolver uma tabela com os gastos.
+5. Desenvolva uma tabela com os gastos contendo as seguintes características:
 
-  * A tabela deve ser alimentada pelo estado da aplicação, que estará disponível na chave ***expenses***.
-  * Crie uma tabela que possua como cabeçalho os campos: Descrição, Tag, Método de pagamento, Valor, Moeda, Câmbio Utilizado, Valor Convertido, Moeda de Conversão e Editar/Deletar.
+  * A tabela deve possuir um cabeçalho **exatamente** com os campos Descrição, Tag, Método de pagamento, Valor, Moeda, Câmbio utilizado, Valor convertido e Moeda de conversão
 
-    * Para cada **th** utilizado para criar a tabela, coloque o atributo *data-testid* com o mesmos valores acima. Por exemplo, *data-testid = 'Descrição'*
+  * A tabela deve ser alimentada pelo estado da aplicação, que estará disponível na chave ***expenses*** que vem do reducer `wallet`.
 
-    * O campo de Editar/Deletar deve conter os dois botões, de Editar e Deletar.
+    * O campo de Moeda e Moeda de Conversão deverão conter o nome da moeda. Portanto, ao invés de 'USD' ou 'EUR', deve conter "Dólar Comercial" e "Euro", respectivamente
 
-  * Crie um atributo *data-testid* com o index utilizado na confecção de cada linha de gasto da tabela. Utilize os seguintes formatos:
+    * Por padrão, o campo 'Moeda de conversão' exibirá 'Real'
 
-    *data-testid = '${index}-description'*
+    * Atenção também às casas decimais dos campos. Como são valores contábeis, eles devem apresentar duas casas após a vírgula. Arredonde sua resposta somente na hora de renderizar o resultado, e para os cálculos utilize sempre os valores vindos da API (utilize o campo `ask` que vem da API).
 
-    *data-testid = '${index}-tag'*
+    * Utilize sempre o formato `0.00` (número - ponto - duas casas decimais)
 
-    *data-testid = '${index}-method'*
 
-    *data-testid = '${index}-value'*
-
-    *data-testid = '${index}-currency'*
-
-    *data-testid = '${index}-exchange-rate'*
-
-    *data-testid = '${index}-exchanged-value'*
-
-    *data-testid = '${index}-exc-currency-name'*
-
-    *data-testid = '${index}-edit-delete'* ( este campo terá mais dois atributos data-testid, uma para cada botão, que serão adicionados mais à frente)
-
-    * O campo de Moeda e Moeda de Conversão deverão conter o nome da moeda. Portanto, ao invés de 'USD' ou 'EUR', deve conter "Dólar Comercial" e "Euro", respectivamente.
-
-    * Atenção também às casas decimais dos campos. Como são valores contábeis, eles devem apresentar duas casas após a vírgula. Arredonde sua respota somente na hora de renderizar o resultado, e para os cálculos utilize sempre os valores vindos da API.
-
-6. Incremente a função de remover uma linha de gastos da tabela no botão de deletar.
+6. Crie um botão para deletar uma despesa da tabela contendo as seguintes características:
 
     ![image](btnExcluir.gif)
 
-  * Adicione o atributo *data-testid = '${index}-delete-btn'* ao botão de deletar.
+  * O botão deve ser o último item da linha da tabela e deve possuir `data-testid="delete-btn"`.
 
-  * Desenvolva esse botão de modo que ele remova a informação da tabela e do estado da aplicação.
-
-7. Incremente a função de alterar uma linha de gastos da tabela no botão de editar.
-
-    ![image](btnEditar.gif)
-
-  * Os campos a serem alterados devem ser o mesmos encontrados no formulário de adicionar. Adicione os seguintes atributos *data-testid* a eles.
-
-    * Para o campo que efetuará mudança no valor: *data-testid = 'e-value-input'*
-
-    * Para o campo que efetuará mudança no valor: *data-testid = 'e-currency-input'*
-
-    * Para o campo que efetuará mudança no valor: *data-testid = 'e-method-input'*
-
-    * Para o campo que efetuará mudança no valor: *data-testid = 'e-tag-input'*
-
-    * Para o campo que efetuará mudança no valor: *data-testid = 'e-description-input'*
-
-**Atenção**: o câmbio utilizado na edição deve ser o mesmo do cálculo feito na adição do gasto.
-
-  * Adicione o atributo *data-testid = '${index}-edit-btn'* ao botão de editar.
-
-  * Desenvolva esse botão de modo que ele edite a informação da tabela e do estado da aplicação.
+  * Ao ser clicado, o botão deleta a linha da tabela, alterando o estado global.
 
 ### Bônus
 
-8.  Adicione um dropdown no Header, como um campo de moeda utilizada, de maneira que o resultado das somas, de **gastos totais e do valor convertido de cada linha**, seja convertido para a moeda escolhida.
+7. Crie um botão para editar uma despesa da tabela contendo as seguintes características:
 
-    ![image](bonusDropdown.gif)
+    ![image](btnEditar.gif)
 
+  * O botão deve estar dentro do último item da linha da tabela e deve possuir `data-testid="edit-btn"`
 
-    * Transforme o campo que possui o *data-testid = 'header-currency-field'* em um dropdown, contendo os valores 'BRL', 'USD', 'CAD', 'EUR', 'GBP', 'ARS', 'BTC', 'LTC', 'JPY', 'CHF', 'AUD', 'CNY', 'ILS', 'ETH' e 'XRP'.
+  * Ao ser clicado, o botão habilita um formulário para editar a linha da tabela. Ao clicar em "Editar despesa" ela é atualizada, alterando o estado global.
 
-    * Salve a moeda selecionada no estado da aplicação, em uma chave ***currencyToExchange***
+    * O formulário deverá ter os mesmos `data-testid` do formulário de adicionar despesa. Você pode reaproveitá-lo.
 
-    * Quando escolhermos uma moeda diferente da padrão, que deve ser 'BRL', o valor da conversão de cada linha deve ser alterado, juntamente com a soma total das despesas no Header. Deve ser utilizada a cotação salva no momento da adição do gasto para o novo cálculo.
+    * O botão para submeter a despesa para edição deverá conter **exatamente** o texto "Editar despesa"
 
-
-9. As informações disponíveis na tabela devem ser salvas no localStorage, na chave ***expenses*** e o email na chave ***email***, de forma que será possível manter as informações principais caso feche a aba ou atualize a página.
-
-    * As informações devem estar renderizadas para a pessoa usuária e também disponíveis no estado da aplicação, nas mesmas chaves usadas anteriormente.
-
+    **Atenção**: o câmbio utilizado na edição deve ser o mesmo do cálculo feito na adição do gasto.
 
 ---
 # Avisos Finais
