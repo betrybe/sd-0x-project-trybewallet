@@ -62,7 +62,10 @@ class Wallet extends React.Component {
     const { email, currencies, expenses } = this.props;
     const { editMode, ...expense } = this.state;
     const totalValue = expenses.length ? Math.round(
-      expenses.reduce((acc, curr) => acc + curr.value * curr.exchangeRates[curr.currency].ask, 0) * 100,
+      expenses
+        .reduce(
+          (acc, curr) => acc + curr.value * curr.exchangeRates[curr.currency].ask, 0,
+        ) * 100,
     ) / 100 : 0;
     return (
       <main>
