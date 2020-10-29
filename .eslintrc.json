@@ -36,6 +36,7 @@
       }
     ],
     "no-console": ["off"],
+    "no-underscore-dangle": ["off"],
     "no-param-reassign": ["off"],
     "consistent-return": ["off"],
     "no-undef": ["off"],
