@@ -205,7 +205,7 @@ Crie uma página para que a pessoa usuária se identifique, com email e senha. E
 
     * O email está no formato válido, como 'alguem@alguem.com'.
 
-    * A senha é maior que 6 caracteres.
+    * A senha possui 6 ou mais caracteres.
 
   * Salve o email no estado da aplicação, com a chave ***email***, assim que a pessoa usuária logar.
 
@@ -213,7 +213,7 @@ Crie uma página para que a pessoa usuária se identifique, com email e senha. E
 
 ### Página da Carteira
 
-Crie uma página para gerenciar a carteira de gastos em diversas moedas, e que traga a despesa total em uma moeda só. Esta página deve ser renderizada por um componente chamado ***Carteira***.
+Crie uma página para gerenciar a carteira de gastos em diversas moedas, e que traga a despesa total em uma moeda só. Esta página deve ser renderizada por um componente chamado ***Wallet***.
 
   ![image](carteira.gif)
 
