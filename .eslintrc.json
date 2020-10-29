@@ -21,7 +21,7 @@
     "no-magic-numbers": [
       "error",
       {
-        "ignore": [1],
+        "ignore": [0, 1, 2, 100],
         "ignoreArrayIndexes": true,
         "enforceConst": true,
         "detectObjects": false
