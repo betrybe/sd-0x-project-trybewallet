@@ -58,9 +58,9 @@ Através dessa aplicação, será possível realizar as operações básicas de 
 ### ANTES DE COMEÇAR A DESENVOLVER:
 
 1. Clone o repositório
-  * `git clone git@github.com:tryber/sd-0x-project-trybe-wallet.git`.
+  * `git clone git@github.com:tryber/sd-0x-project-trybewallet.git`.
   * Entre na pasta do repositório que você acabou de clonar:
-    * `cd sd-0x-project-trybe-wallet`
+    * `cd sd-0x-project-trybewallet`
 
 2. Instale as dependências e inicialize o projeto
   * Instale as dependências:
@@ -94,7 +94,7 @@ Através dessa aplicação, será possível realizar as operações básicas de 
 
 ---
 
-### DEPOIS DE TERMINAR O DESENVOLVIMENTO
+### DEPOIS DE TERMINAR O DESENVOLVIMENTO (OPCIONAL)
 
 Para **"entregar"** seu projeto, siga os passos a seguir:
 
@@ -181,7 +181,7 @@ Crie uma página para que a pessoa usuária se identifique, com email e senha. E
 
   * A rota para esta página deve ser ‘/’.
 
-  * Você deve criar um local para que o usuário insira seu email e senha. Utilize o atributo `data-testid="email-input"` para o email e `data-testid="password-input"` para a senha.
+  * Você deve criar um local para que a pessoa usuária insira seu email e senha. Utilize o atributo `data-testid="email-input"` para o email e `data-testid="password-input"` para a senha.
 
   * Crie um botão com o texto ‘Entrar’.
 
@@ -191,7 +191,7 @@ Crie uma página para que a pessoa usuária se identifique, com email e senha. E
 
     * A senha é maior que 6 caracteres.
 
-  * Salve o email no estado da aplicação, com a chave ***email***, assim que o usuário logar.
+  * Salve o email no estado da aplicação, com a chave ***email***, assim que a pessoa usuária logar.
 
   * A rota deve ser mudada para '/carteira' após o clique no botão '**Entrar**'.
 
@@ -215,7 +215,7 @@ Crie uma página para gerenciar a carteira de gastos em diversas moedas, e que t
 
 3. Crie um header para a página de carteira contendo as seguintes características:
 
-  * Um elemento que exiba o email do usuário que fez login.
+  * Um elemento que exiba o email da pessoa usuária que fez login.
 
     * Adicione o atributo `data-testid="email-field"`.
 
@@ -249,7 +249,7 @@ Crie uma página para gerenciar a carteira de gastos em diversas moedas, e que t
 
     * Adicione o atributo `data-testid="currency-input"`.
 
-    * Este campo deve ser um dropdown. O usuário deve poder escolher entre os campos: 'USD', 'CAD', 'EUR', 'GBP', 'ARS', 'BTC', 'LTC', 'JPY', 'CHF', 'AUD', 'CNY', 'ILS', 'ETH' e 'XRP'.
+    * Este campo deve ser um dropdown. a pessoa usuária deve poder escolher entre os campos: 'USD', 'CAD', 'EUR', 'GBP', 'ARS', 'BTC', 'LTC', 'JPY', 'CHF', 'AUD', 'CNY', 'ILS', 'ETH' e 'XRP'.
 
     * Os valores do campo de moedas devem ser puxados através da requisição à API.
 
@@ -267,7 +267,7 @@ Crie uma página para gerenciar a carteira de gastos em diversas moedas, e que t
 
   * Um campo para selecionar uma categoria (tag) para a despesa.
 
-    * Este campo deve ser um dropdown. O usuário deve poder escolher entre os campos: 'Alimentação', 'Lazer', 'Trabalho', 'Transporte' e 'Saúde'.
+    * Este campo deve ser um dropdown. a pessoa usuária deve poder escolher entre os campos: 'Alimentação', 'Lazer', 'Trabalho', 'Transporte' e 'Saúde'.
 
     * Adicione o atributo `data-testid="tag-input"`.
 
