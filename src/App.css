@@ -36,3 +36,97 @@
     transform: rotate(360deg);
   }
 }
+
+.login-container {
+  border: 1px solid black;
+  border-radius: 10px;
+  margin: 110px auto;
+  padding: 60px 50px;
+  width: 350px;
+}
+
+.login-logo {
+  margin-bottom: 15px;
+}
+
+.login-botao {
+  margin: 10px 0;
+}
+
+.header {
+  border-bottom: 1px solid white;
+  font-weight: 600;
+  height: 70px;
+}
+
+.header-text-container {
+  padding: 0 30px;
+}
+
+.header-detail {
+  padding-top: 15px;
+}
+
+.logo {
+  position: absolute;
+  left: 40px;
+  top: 20px;
+}
+
+.search-bar {
+  background-color: #282c34;
+  border-bottom: white;
+  color: white;
+  padding: 10px;
+  margin: 0 !important;
+}
+
+.edit-bar {
+  background-color: #0ea36a;
+  border-top: 1px solid rgb(50, 150, 20);
+  border-bottom: 1px solid white;
+  color: black;
+  padding: 10px;
+  margin: 0 !important;
+}
+
+.input-valor,
+.input-moeda {
+  width: 100px !important;
+  text-align: center;
+}
+
+.metodo-input {
+  width: 170px !important;
+  text-align: center;
+}
+
+.tag-input {
+  width: 150px !important;
+  text-align: center;
+}
+
+.descricao-input {
+  width: 200px !important;
+}
+
+.table-line-size {
+  height: 30px !important;
+}
+
+.label,
+.input {
+  margin: 7px;
+}
+
+.button {
+  margin: 2px;
+}
+
+.botao-add {
+  margin-left: 10px;
+}
+
+.form-group {
+  margin: 0 !important;
+}
