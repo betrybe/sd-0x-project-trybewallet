@@ -297,10 +297,10 @@ describe('4 - [PÁGINA DA CARTEIRA] Desenvolva um formulário para adicionar uma
   });
 });
 
-describe('5 - [PÁGINA DA CARTEIRA] Desenvolva uma tabela com os gastos', () => {
+describe('5 - [PÁGINA DA CARTEIRA] Desenvolva uma tabela com os gastos contendo as seguintes características:', () => {
   const initial = initialStateWithExpenses;
 
-  test('Crie uma tabela que possua como cabeçalho os campos Descrição, Tag, Método de pagamento, Valor, Moeda, Câmbio utilizado, Valor convertido e Moeda de conversão', () => {
+  test('A tabela deve possuir um cabeçalho com os campos Descrição, Tag, Método de pagamento, Valor, Moeda, Câmbio utilizado, Valor convertido e Moeda de conversão', () => {
     renderWithRouterAndStore(<Wallet />, '/carteira', initial);
     const thDescricao = screen.getByText('Descrição');
     const thTag = screen.getByText('Tag');

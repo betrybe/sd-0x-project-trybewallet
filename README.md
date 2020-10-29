@@ -385,9 +385,9 @@ Crie uma página para gerenciar a carteira de gastos em diversas moedas, e que t
 
 #### Tabela de Gastos
 
-5. Crie uma tabela que exiba as despesas cadastradas contendo as seguintes características: 
+5. Desenvolva uma tabela com os gastos contendo as seguintes características:
 
-  * Os campos de cabeçalho da tabela devem ter **exatamente** os valores: Descrição, Tag, Método de pagamento, Valor, Moeda, Câmbio utilizado, Valor convertido, Moeda de conversão e Editar/Deletar
+  * A tabela deve possuir um cabeçalho **exatamente** com os campos Descrição, Tag, Método de pagamento, Valor, Moeda, Câmbio utilizado, Valor convertido e Moeda de conversão
 
   * A tabela deve ser alimentada pelo estado da aplicação, que estará disponível na chave ***expenses*** que vem do reducer `wallet`.
 
