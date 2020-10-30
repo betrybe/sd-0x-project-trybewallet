@@ -1,8 +1,18 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { fetchCurrencies } from '../actions';
+import { fetchCurrencies, setExpenses } from '../actions';
 
 class Wallet extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      expenseValue: '',
+      description: '',
+      coin: '',
+      payment: '',
+      reason: ''
+    }
+  }
 
   componentDidMount() {
     this.props.fetch()
@@ -10,6 +20,7 @@ class Wallet extends React.Component {
 
   render() {
     const { email } = this.props.email;
+    const { setExpenses } = this.props;
     let currencies = Object.keys(this.props.wallet.currencies)
     currencies = currencies.filter((item) => item !== 'USDT')
 
@@ -21,19 +32,50 @@ class Wallet extends React.Component {
           <span data-testid="header-currency-field">BRL</span>
         </header>
         <div>
-          <div data-testid="value-input">Valor da Despesa: </div>
-          <textarea data-testid="description-input"></textarea>
-          <select data-testid="currency-input">
+          <label>
+            <input
+              data-testid="value-input"
+              type="number"
+              onChange={(e) => this.setState({
+                expenseValue: e.target.value
+              })}
+            />
+          </label>
+          <textarea
+            data-testid="description-input"
+            onChange={(e) => this.setState({
+              description: e.target.value
+            })}
+          />
+          <select
+            name="currency"
+            data-testid="currency-input"
+            onChange={(e) => this.setState({
+              coin: e.target.value
+            })}
+          >
             {currencies.map((i, index) => (
               <option data-testid={i} value={i} key={index + 1}>{i}</option>
             ))}
           </select>
-          <select data-testid="method-input">
+              {this.state.coin}
+          <select
+            data-testid="method-input"
+            onChange={(e) => this.setState({
+              payment: e.target.value
+            })}
+          >
             <option value="dinheiro">Dinheiro</option>
             <option value="cartaoCredito">Cartão de crédito</option>
             <option value="cartaoDebito">Cartão de débito</option>
           </select>
-          <select data-testid="tag-input">
+
+          <select
+            data-testid="tag-input"
+            onChange={(e) => this.setState({
+              reason: e.target.value
+            })}
+          >
             <option value="alimentacao">Alimentação</option>
             <option value="lazer">Lazer</option>
             <option value="trabalho">Trabalho</option>
@@ -41,6 +83,12 @@ class Wallet extends React.Component {
             <option value="saude">Saúde</option>
           </select>
         </div>
+        <button
+          type="button"
+          onClick={() => setExpenses(this.state)}
+        >
+          Enviar
+        </button>
       </div>
     );
   }
@@ -52,7 +100,8 @@ const mapStateToProps = (state) => ({
 })
 
 const mapDispatchToProps = (dispatch) => ({
-  fetch: () => dispatch(fetchCurrencies())
+  fetch: () => dispatch(fetchCurrencies()),
+  setExpenses: (data) => dispatch(setExpenses(data))
 })
 
 

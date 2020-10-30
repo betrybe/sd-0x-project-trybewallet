@@ -1,4 +1,5 @@
 import { response } from '../tests/mockData';
+import { SUCCESS_CURRENCIES, ERROR_CURRENCIES, SET_EXPENSES } from '../types';
 
 export const saveEmail = (payload) => ({
   type: 'LOGIN',
@@ -6,12 +7,17 @@ export const saveEmail = (payload) => ({
 })
 
 export const successCurrencies = (payload) => ({
-  type: 'SUCCESS_CURRENCIES',
+  type: SUCCESS_CURRENCIES,
   payload
 })
 
 export const errorCurrencies = (payload) => ({
-  type: 'ERROR_CURRENCIES',
+  type: ERROR_CURRENCIES,
+  payload
+})
+
+export const setExpenses = (payload) => ({
+  type: SET_EXPENSES,
   payload
 })
 
