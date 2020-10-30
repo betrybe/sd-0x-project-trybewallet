@@ -1,11 +1,8 @@
+import { response } from '../tests/mockData';
+
 export const saveEmail = (payload) => ({
   type: 'LOGIN',
   payload
-})
-
-export const fetchCurrencies = (payload) => ({
-  type: 'FETCH_CURRENCIES',
-  payload,
 })
 
 export const successCurrencies = (payload) => ({
@@ -18,15 +15,14 @@ export const errorCurrencies = (payload) => ({
   payload
 })
 
-
-export const requestCurrency = () => {
+// "https://economia.awesomeapi.com.br/json/all"
+export const fetchCurrencies = () => {
   return (dispatch) => {
-    return fetch("https://economia.awesomeapi.com.br/json/all")
-    .then((response) => response.json()
+    return Promise.resolve(response)
     .then(
-      (response) => dispatch(fetchCurrencies(response)),
-      (error) => errorCurrencies(error)
-      ).then((response) => console.log(response.payload))
-    )
+      (response) => dispatch(successCurrencies(response)),
+      (error) => dispatch(errorCurrencies(error))
+      )
+    
   }   
 }

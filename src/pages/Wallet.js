@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { requestCurrency } from '../actions';
+import { fetchCurrencies } from '../actions';
 
 class Wallet extends React.Component {
 
@@ -10,17 +10,35 @@ class Wallet extends React.Component {
 
   render() {
     const { email } = this.props.email;
-    const { fetch } = this.props
-    console.log('wallet', Object.keys(this.props.wallet.currencies))
-    const currencies = Object.keys(this.props.wallet.currencies)
+    let currencies = Object.keys(this.props.wallet.currencies)
+    currencies = currencies.filter((item) => item !== 'USDT')
+
     return (
       <div>
-        <header data-testid="email-field">{email}</header>
+        <header>
+          <span data-testid="email-field">{email}</span>
+          <span data-testid="total-field">Despesa total: 0</span>
+          <span data-testid="header-currency-field">BRL</span>
+        </header>
         <div>
-          <select>
-            {currencies.map((i) => (
-              <option>{i}</option>
+          <div data-testid="value-input">Valor da Despesa: </div>
+          <textarea data-testid="description-input"></textarea>
+          <select data-testid="currency-input">
+            {currencies.map((i, index) => (
+              <option data-testid={i} value={i} key={index + 1}>{i}</option>
             ))}
+          </select>
+          <select data-testid="method-input">
+            <option value="dinheiro">Dinheiro</option>
+            <option value="cartaoCredito">Cartão de crédito</option>
+            <option value="cartaoDebito">Cartão de débito</option>
+          </select>
+          <select data-testid="tag-input">
+            <option value="alimentacao">Alimentação</option>
+            <option value="lazer">Lazer</option>
+            <option value="trabalho">Trabalho</option>
+            <option value="transporte">Transporte</option>
+            <option value="saude">Saúde</option>
           </select>
         </div>
       </div>
@@ -34,7 +52,7 @@ const mapStateToProps = (state) => ({
 })
 
 const mapDispatchToProps = (dispatch) => ({
-  fetch: () => dispatch(requestCurrency())
+  fetch: () => dispatch(fetchCurrencies())
 })
 
 
