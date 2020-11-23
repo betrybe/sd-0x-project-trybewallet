@@ -54,17 +54,17 @@ Através dessa aplicação, será possível realizar as operações básicas de 
 
 # Sumário
 
-- [O que deverá ser desenvolvido](#o-que-deverá-ser-desenvolvido)
-
-- [Desenvolvimento](#desenvolvimento)
+- [Entregáveis](#entregáveis)
+  - [O que deverá ser desenvolvido](#o-que-deverá-ser-desenvolvido)
+  - [Desenvolvimento](#desenvolvimento)
   - [Data de entrega](#data-de-entrega)
 
 - [Instruções para entregar seu projeto](#)
   - [Antes de começar a desenvolver](#antes-de-começar-a-desenvolver)
-  - [Durante o desenvolvimento](#)
-  - [DEPOIS DE TERMINAR O DESENVOLVIMENTO (OPCIONAL)](#)
-  - [Documentação da API de Cotações de Moedas](#)
-  - [Execução de testes unitários](#)
+  - [Durante o desenvolvimento](#durante-o-desenvolvimento)
+  - [Depois de terminar o desenvolvimento (opcional)](#depois-de-terminar-o-desenvolvimento-opcional)
+  - [Documentação da API de Cotações de Moedas](#documentação-da-api-de-cotações-de-moedas)
+  - [Execução de testes unitários](#execução-de-testes-unitários)
 
 - [Como desenvolver](#como-desenvolver)
 
@@ -194,8 +194,6 @@ Afim de verificar a solução proposta, você pode executar todos os testes unit
 npm test
 ```
 
-# Requisitos do projeto
-
 # Como desenvolver
 
 Nessa aplicação você deverá **obrigatoriamente** utilizar o seguinte formato do estado global:
@@ -224,6 +222,8 @@ Para garantir a qualidade do seu código de forma a tê-lo mais legível, seguin
 ⚠ PULL REQUESTS COM ISSUES DE LINTER NÃO SERÃO AVALIADAS. ATENTE-SE PARA RESOLVÊ-LAS ANTES DE FINALIZAR O DESENVOLVIMENTO! ⚠
 
 Aqui encontram-se os requisitos do projeto. Em cada requisito você encontrara uma imagem de um protótipo de como sua aplicação deve ficar. Estilo da página não será avaliado.
+
+# Requisitos do projeto
 
 ## Lista de requisitos
 
