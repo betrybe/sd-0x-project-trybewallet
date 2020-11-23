@@ -24,9 +24,31 @@ Neste projeto, verificamos se voce é capaz de:
 
 # Entregáveis
 
+## O que deverá ser desenvolvido
+
+Neste projeto você vai desenvolver uma carteira de controle de gastos com conversor de moedas, ao utilizar essa aplicação um usuário deverá ser capaz de:
+  - Adicionar, remover e editar um gasto;
+  - Visualizar uma tabelas com seus gastos;
+  - Visualizar o total de gastos convertidos para uma moeda de escolha;
+
 Para entregar o seu projeto você deverá criar um Pull Request neste repositório.
 
 Lembre-se que você pode consultar nosso conteúdo sobre [Git & GitHub](https://course.betrybe.com/intro/git/) sempre que precisar!
+
+
+## Desenvolvimento
+
+Você deve desenvolver uma aplicação em React que use Redux como ferramenta de manipulação de estado.
+
+Através dessa aplicação, será possível realizar as operações básicas de criação e manipulação de um estado de redux.
+
+## Data de Entrega
+
+  - Projeto individual.
+
+  - Serão dois dias de projeto.
+  
+  - O projeto tem até a seguinte data: `DD/MM/YYYY - 14:00h`. Para ser entregue a avaliação final.
 
 ---
 
@@ -44,6 +66,8 @@ Lembre-se que você pode consultar nosso conteúdo sobre [Git & GitHub](https://
   - [Documentação da API de Cotações de Moedas](#)
   - [Execução de testes unitários](#)
 
+- [Como desenvolver](#como-desenvolver)
+
 - [Requisitos do projeto](#requisitos-do-projeto)
   - [Linter](#linter)
   - [Antes de começar](#antes-de-começar)
@@ -56,27 +80,6 @@ Lembre-se que você pode consultar nosso conteúdo sobre [Git & GitHub](https://
       - [Tabela de Gastos](#tabela-de-gastos)
     - [Bônus](#bônus)
 - [Avisos Finais](#avisos-finais)
-
-# O que deverá ser desenvolvido
-
-Neste projeto você vai desenvolver uma carteira de controle de gastos com conversor de moedas, ao utilizar essa aplicação um usuário deverá ser capaz de:
-  - Adicionar, remover e editar um gasto;
-  - Visualizar uma tabelas com seus gastos;
-  - Visualizar o total de gastos convertidos para uma moeda de escolha;
-
-# Desenvolvimento
-
-Você deve desenvolver uma aplicação em React que use Redux como ferramenta de manipulação de estado.
-
-Através dessa aplicação, será possível realizar as operações básicas de criação e manipulação de um estado de redux.
-
-## Data de Entrega
-
-  - Projeto individual.
-
-  - Serão dois dias de projeto.
-  
-  - O projeto tem até a seguinte data: `DD/MM/YYYY - 14:00h`. Para ser entregue a avaliação final.
 
 ---
 
@@ -106,7 +109,7 @@ Através dessa aplicação, será possível realizar as operações básicas de 
   * Agora, crie uma branch onde você vai guardar os commits do seu projeto
 ---
 
-### DURANTE O DESENVOLVIMENTO
+## DURANTE O DESENVOLVIMENTO
 
 * Faça `commits` das alterações que você fizer no código regularmente
 
@@ -121,7 +124,7 @@ Através dessa aplicação, será possível realizar as operações básicas de 
 
 ---
 
-### DEPOIS DE TERMINAR O DESENVOLVIMENTO (OPCIONAL)
+## DEPOIS DE TERMINAR O DESENVOLVIMENTO (OPCIONAL)
 
 Para **"entregar"** seu projeto, siga os passos a seguir:
 
@@ -193,15 +196,7 @@ npm test
 
 # Requisitos do projeto
 
-## Linter
-Para garantir a qualidade do seu código de forma a tê-lo mais legível, de mais fácil manutenção e seguindo as boas práticas de desenvolvimento nós utilizamos neste projeto o linter ESLint. Para rodar o linter localmente no seu projeto, execute o comando abaixo:
-
-npm run lint
-⚠ PULL REQUESTS COM ISSUES DE LINTER NÃO SERÃO AVALIADAS. ATENTE-SE PARA RESOLVÊ-LAS ANTES DE FINALIZAR O DESENVOLVIMENTO! ⚠
-
-Aqui encontram-se os requisitos do projeto. Em cada requisito você encontrara uma imagem de um protótipo de como sua aplicação deve ficar. Estilo da página não será avaliado.
-
-## Antes de começar
+# Como desenvolver
 
 Nessa aplicação você deverá **obrigatoriamente** utilizar o seguinte formato do estado global:
 
@@ -220,6 +215,15 @@ Nessa aplicação você deverá **obrigatoriamente** utilizar o seguinte formato
 É importante respeitar esse formato para que o avaliador funcione corretamente. Você pode adicionar novos campos ao seu estado global, mas essa estrutura básica deve se manter. Por exemplo, você pode adicionar uma propriedade `isFetching` no seu estado. Mas você **não** pode salvar as despesas em uma chave diferente de `wallet.expenses`.
 
 Outra coisa importante: devido a estrutura que o avaliador utiliza para realizar os testes, é **necessário** que o seu <Provider /> e o seu <BrowserRouter /> estejam no arquivo `index.js` e **não** no `<App />`.
+
+## Linter
+Para garantir a qualidade do seu código de forma a tê-lo mais legível, seguindo as boas práticas de desenvolvimento e com maior facilidade de manutenção, nós utilizamos neste projeto o linter ESLint. Para rodar o linter localmente no seu projeto, execute o comando abaixo:
+
+`npm run lint`
+
+⚠ PULL REQUESTS COM ISSUES DE LINTER NÃO SERÃO AVALIADAS. ATENTE-SE PARA RESOLVÊ-LAS ANTES DE FINALIZAR O DESENVOLVIMENTO! ⚠
+
+Aqui encontram-se os requisitos do projeto. Em cada requisito você encontrara uma imagem de um protótipo de como sua aplicação deve ficar. Estilo da página não será avaliado.
 
 ## Lista de requisitos
 
