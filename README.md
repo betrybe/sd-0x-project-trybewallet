@@ -490,6 +490,7 @@ Crie uma página para gerenciar a carteira de gastos em diversas moedas, e que t
     * Atenção também às casas decimais dos campos. Como são valores contábeis, eles devem apresentar duas casas após a vírgula. Arredonde sua resposta somente na hora de renderizar o resultado, e para os cálculos utilize sempre os valores vindos da API (utilize o campo `ask` que vem da API).
 
     * Utilize sempre o formato `0.00` (número - ponto - duas casas decimais)
+    
 O que será avaliado:
 ```
 - A tabela deve possuir um cabeçalho com os campos Descrição, Tag, Método de pagamento, Valor, Moeda, Câmbio utilizado, Valor convertido e Moeda de conversão.
