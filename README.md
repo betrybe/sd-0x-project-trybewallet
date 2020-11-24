@@ -1,4 +1,8 @@
+### Termos e acordos
+
 Ao iniciar este projeto, você concorda com as diretrizes do Código de Ética e Conduta e do Manual da Pessoa Estudante da Trybe.
+
+---
 
 # Boas vindas ao repositório do projeto Trybe Wallet!
 
@@ -6,6 +10,40 @@ Você já usa o GitHub diariamente para desenvolver os exercícios, certo? Agora
 
 Aqui você vai encontrar os detalhes de como estruturar o desenvolvimento do seu projeto a partir deste repositório, utilizando uma branch específica e um _Pull Request_ para colocar seus códigos.
 
+---
+
+# Sumário
+
+- [Habilidades](#habilidades)
+
+- [Entregáveis](#entregáveis)
+  - [O que deverá ser desenvolvido](#o-que-deverá-ser-desenvolvido)
+  - [Desenvolvimento](#desenvolvimento)
+  - [Data de entrega](#data-de-entrega)
+
+- [Instruções para entregar seu projeto](#instruções-para-entregar-seu-projeto)
+  - [Antes de começar a desenvolver](#antes-de-começar-a-desenvolver)
+  - [Durante o desenvolvimento](#durante-o-desenvolvimento)
+  - [Depois de terminar o desenvolvimento (opcional)](#depois-de-terminar-o-desenvolvimento-opcional)
+  - [Documentação da API de Cotações de Moedas](#documentação-da-api-de-cotações-de-moedas)
+  - [Execução de testes unitários](#execução-de-testes-unitários)
+
+- [Como desenvolver](#como-desenvolver)
+
+- [Requisitos do projeto](#requisitos-do-projeto)
+  - [Linter](#linter)
+  - [Antes de começar](#antes-de-começar)
+  - [Lista de requisitos](#lista-de-requisitos)
+    - [Página de Login](#página-de-login)
+    - [Página da Carteira](#página-da-carteira)
+      - [Configurando sua página](#configurando-sua-página)
+      - [Header](#header)
+      - [Formulário de adição de Despesa](#formulário-de-adição-de-despesa)
+      - [Tabela de Gastos](#tabela-de-gastos)
+    - [Bônus](#bônus)
+- [Avisos Finais](#avisos-finais)
+
+---
 
 # Habilidades
 Neste projeto, verificamos se voce é capaz de:
@@ -21,6 +59,8 @@ Neste projeto, verificamos se voce é capaz de:
   * Conectar Redux aos componentes React
 
   * Criar actions assíncronas na sua aplicação React que faz uso de Redux.
+
+---
 
 # Entregáveis
 
@@ -49,37 +89,6 @@ Através dessa aplicação, será possível realizar as operações básicas de 
   - Serão dois dias de projeto.
   
   - O projeto tem até a seguinte data: `DD/MM/YYYY - 14:00h`. Para ser entregue a avaliação final.
-
----
-
-# Sumário
-
-- [Entregáveis](#entregáveis)
-  - [O que deverá ser desenvolvido](#o-que-deverá-ser-desenvolvido)
-  - [Desenvolvimento](#desenvolvimento)
-  - [Data de entrega](#data-de-entrega)
-
-- [Instruções para entregar seu projeto](#)
-  - [Antes de começar a desenvolver](#antes-de-começar-a-desenvolver)
-  - [Durante o desenvolvimento](#durante-o-desenvolvimento)
-  - [Depois de terminar o desenvolvimento (opcional)](#depois-de-terminar-o-desenvolvimento-opcional)
-  - [Documentação da API de Cotações de Moedas](#documentação-da-api-de-cotações-de-moedas)
-  - [Execução de testes unitários](#execução-de-testes-unitários)
-
-- [Como desenvolver](#como-desenvolver)
-
-- [Requisitos do projeto](#requisitos-do-projeto)
-  - [Linter](#linter)
-  - [Antes de começar](#antes-de-começar)
-  - [Lista de requisitos](#lista-de-requisitos)
-    - [Página de Login](#página-de-login)
-    - [Página da Carteira](#página-da-carteira)
-      - [Configurando sua página](#configurando-sua-página)
-      - [Header](#header)
-      - [Formulário de adição de Despesa](#formulário-de-adição-de-despesa)
-      - [Tabela de Gastos](#tabela-de-gastos)
-    - [Bônus](#bônus)
-- [Avisos Finais](#avisos-finais)
 
 ---
 
@@ -142,7 +151,7 @@ Sua página _web_ irá consumir os dados da API do _awesomeapi API de Cotações
 - https://economia.awesomeapi.com.br/json/all
 
 O retorno desse endpoint será algo no formato:
-```json
+```
 {
    {
      "USD": {
@@ -194,6 +203,8 @@ Afim de verificar a solução proposta, você pode executar todos os testes unit
 npm test
 ```
 
+---
+
 # Como desenvolver
 
 Nessa aplicação você deverá **obrigatoriamente** utilizar o seguinte formato do estado global:
@@ -215,13 +226,16 @@ Nessa aplicação você deverá **obrigatoriamente** utilizar o seguinte formato
 Outra coisa importante: devido a estrutura que o avaliador utiliza para realizar os testes, é **necessário** que o seu <Provider /> e o seu <BrowserRouter /> estejam no arquivo `index.js` e **não** no `<App />`.
 
 ## Linter
-Para garantir a qualidade do seu código de forma a tê-lo mais legível, seguindo as boas práticas de desenvolvimento e com maior facilidade de manutenção, nós utilizamos neste projeto o linter ESLint. Para rodar o linter localmente no seu projeto, execute o comando abaixo:
+
+Para garantir a qualidade do código, vamos utilizar neste projeto o linter ESLint. Assim o código estará alinhado com as boas práticas de desenvolvimento, sendo mais legível e de fácil manutenção! Para rodar o *linter* localmente no projeto, execute o comando abaixo: 
 
 `npm run lint`
 
 ⚠ PULL REQUESTS COM ISSUES DE LINTER NÃO SERÃO AVALIADAS. ATENTE-SE PARA RESOLVÊ-LAS ANTES DE FINALIZAR O DESENVOLVIMENTO! ⚠
 
 Aqui encontram-se os requisitos do projeto. Em cada requisito você encontrara uma imagem de um protótipo de como sua aplicação deve ficar. Estilo da página não será avaliado.
+
+---
 
 # Requisitos do projeto
 
