@@ -479,7 +479,7 @@ Crie uma página para gerenciar a carteira de gastos em diversas moedas, e que t
     }]
     ```
 
-  O que será verificado
+  O que será verificado:
   ```
   - Um campo para adicionar o valor da despesa
   - Um campo para adicionar a descrição da despesa
@@ -505,7 +505,7 @@ Crie uma página para gerenciar a carteira de gastos em diversas moedas, e que t
 
     * Utilize sempre o formato `0.00` (número - ponto - duas casas decimais)
     
-O que será avaliado:
+O que será verificado:
 ```
 - A tabela deve possuir um cabeçalho com os campos Descrição, Tag, Método de pagamento, Valor, Moeda, Câmbio utilizado, Valor convertido e Moeda de conversão.
 - A tabela deve ser alimentada pelo estado da aplicação, que estará disponível na chave expenses que vem do reducer wallet.
@@ -519,7 +519,7 @@ O que será avaliado:
 
   * Ao ser clicado, o botão deleta a linha da tabela, alterando o estado global.
 
-O que será avaliado:
+O que será verificado:
 ```
 - O botão deve estar dentro do último item da linha da tabela e deve possuir `data-testid="delete-btn
 - Ao ser clicado, o botão deleta a linha da tabela, alterando o estado global
@@ -541,7 +541,7 @@ O que será avaliado:
 
     **Atenção**: o câmbio utilizado na edição deve ser o mesmo do cálculo feito na adição do gasto.
 
-  O que será avaliado:
+  O que será verificado:
   ```
   - O botão deve estar dentro do último item da linha da tabela e deve possuir `data-testid="edit-btn"
   - Ao ser clicado, o botão habilita um formulário para editar a linha da tabela. Ao clicar em "Editar despesa" ela é atualizada, alterando o estado global
