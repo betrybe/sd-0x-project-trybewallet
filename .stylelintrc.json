@@ -67,7 +67,7 @@
     "media-feature-range-operator-space-after": "always",
     "media-feature-range-operator-space-before": "always",
     "media-query-list-comma-space-after": "always",
-    "media-query-list-comma-space-before": "never",
+    "media-query-list-comma-space-before": "always",
     "no-descending-specificity": true,
     "no-duplicate-at-import-rules": true,
     "no-duplicate-selectors": true,
@@ -87,7 +87,9 @@
     "rule-empty-line-before": [
       "always",
       {
-        "except": ["after-single-line-comment"]
+        "except": [
+          "after-single-line-comment"
+        ]
       }
     ],
     "selector-attribute-brackets-space-inside": "always",
@@ -98,7 +100,7 @@
     "selector-combinator-space-before": "always",
     "selector-descendant-combinator-no-non-space": true,
     "selector-list-comma-space-after": "always",
-    "selector-list-comma-space-before": "never",
+    "selector-list-comma-space-before": "always",
     "selector-max-attribute": 3,
     "selector-max-class": 5,
     "selector-max-combinators": 3,
@@ -126,8 +128,7 @@
     "unit-case": "lower",
     "unit-no-unknown": true,
     "value-keyword-case": "lower",
-    "value-list-comma-space-after": "always",
-    "value-list-comma-space-before": "always",
+    "value-list-comma-space-after": "always-single-line",
     "value-list-max-empty-lines": 0,
     "value-no-vendor-prefix": true
   }
