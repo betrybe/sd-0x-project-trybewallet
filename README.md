@@ -15,24 +15,19 @@ Aqui você vai encontrar os detalhes de como estruturar o desenvolvimento do seu
 # Sumário
 
 - [Habilidades](#habilidades)
-
 - [Entregáveis](#entregáveis)
   - [O que deverá ser desenvolvido](#o-que-deverá-ser-desenvolvido)
   - [Desenvolvimento](#desenvolvimento)
   - [Data de entrega](#data-de-entrega)
-
 - [Instruções para entregar seu projeto](#instruções-para-entregar-seu-projeto)
   - [Antes de começar a desenvolver](#antes-de-começar-a-desenvolver)
   - [Durante o desenvolvimento](#durante-o-desenvolvimento)
   - [Depois de terminar o desenvolvimento (opcional)](#depois-de-terminar-o-desenvolvimento-opcional)
+- [Como desenvolver](#como-desenvolver)
+  - [Linter](#linter)
   - [Documentação da API de Cotações de Moedas](#documentação-da-api-de-cotações-de-moedas)
   - [Execução de testes unitários](#execução-de-testes-unitários)
-
-- [Como desenvolver](#como-desenvolver)
-
 - [Requisitos do projeto](#requisitos-do-projeto)
-  - [Linter](#linter)
-  - [Antes de começar](#antes-de-começar)
   - [Lista de requisitos](#lista-de-requisitos)
     - [Página de Login](#página-de-login)
     - [Página da Carteira](#página-da-carteira)
@@ -144,67 +139,6 @@ Para **"entregar"** seu projeto, siga os passos a seguir:
 
 ---
 
-### Documentação da API de Cotações de Moedas
-
-Sua página _web_ irá consumir os dados da API do _awesomeapi API de Cotações_ para realizar a busca de câmbio de moedas. Para realizar essas buscas, vocês precisarão consultar o seguinte _endpoint_:
-
-- https://economia.awesomeapi.com.br/json/all
-
-O retorno desse endpoint será algo no formato:
-```
-{
-   {
-     "USD": {
-       "code":"USD",
-       "codein":"BRL",
-       "name":"Dólar Comercial",
-       "high":"5.6689",
-       "low":"5.6071",
-       "varBid":"-0.0166",
-       "pctChange":"-0.29",
-       "bid":"5.6173",
-       "ask":"5.6183",
-       "timestamp":"1601476370",
-       "create_date":"2020-09-30 11:32:53"
-       },
-      ...
-   }
-}
-```
-
-Se você quiser aprender mais informações sobre a API, veja a [documentação](https://docs.awesomeapi.com.br/api-de-moedas).
-
-
-### Execução de testes unitários
-
-Vamos utilizar [React Testing Library](https://testing-library.com/docs/react-testing-library/intro) para execução dos testes unitários.
-
-Esse _framework_ de testes utiliza algumas marcações no código para verificar a solução proposta, uma dessas marcações é o atributo `data-testid` e faremos uso dele aqui.
-
-Na descrição dos requisitos (logo abaixo) será pedido que seja feita a adição de atributos `data-testid` nos elementos _HTML_. Vamos a um exemplo para deixar claro essa configuração:
-
-Se o requisito pedir "crie um botão e adicione o id de teste (ou `data-testid`) com o valor `my-action`, você pode criar:
-
-```html
-<button data-testid="my-action"></button>
-```
-
-ou
-
-```html
-<a data-testid="my-action"><a/>
-```
-
-ou seja, o atributo `data-testid="my-action"` servirá para o React Testing Library(RTL) identificar o elemento e dessa forma, conseguiremos realizar testes unitários focados no comportamento da aplicação.
-
-Afim de verificar a solução proposta, você pode executar todos os testes unitários localmente, basta executar:
-
-```bash
-npm test
-```
-
----
-
 # Como desenvolver
 
 Nessa aplicação você deverá **obrigatoriamente** utilizar o seguinte formato do estado global:
@@ -237,7 +171,70 @@ Aqui encontram-se os requisitos do projeto. Em cada requisito você encontrara u
 
 ---
 
+## Documentação da API de Cotações de Moedas
+
+Sua página _web_ irá consumir os dados da API do _awesomeapi API de Cotações_ para realizar a busca de câmbio de moedas. Para realizar essas buscas, vocês precisarão consultar o seguinte _endpoint_:
+
+- https://economia.awesomeapi.com.br/json/all
+
+O retorno desse endpoint será algo no formato:
+```
+{
+   {
+     "USD": {
+       "code":"USD",
+       "codein":"BRL",
+       "name":"Dólar Comercial",
+       "high":"5.6689",
+       "low":"5.6071",
+       "varBid":"-0.0166",
+       "pctChange":"-0.29",
+       "bid":"5.6173",
+       "ask":"5.6183",
+       "timestamp":"1601476370",
+       "create_date":"2020-09-30 11:32:53"
+       },
+      ...
+   }
+}
+```
+
+Se você quiser aprender mais informações sobre a API, veja a [documentação](https://docs.awesomeapi.com.br/api-de-moedas).
+
+---
+
+## Execução de testes unitários
+
+Vamos utilizar [React Testing Library](https://testing-library.com/docs/react-testing-library/intro) para execução dos testes unitários.
+
+Esse _framework_ de testes utiliza algumas marcações no código para verificar a solução proposta, uma dessas marcações é o atributo `data-testid` e faremos uso dele aqui.
+
+Na descrição dos requisitos (logo abaixo) será pedido que seja feita a adição de atributos `data-testid` nos elementos _HTML_. Vamos a um exemplo para deixar claro essa configuração:
+
+Se o requisito pedir "crie um botão e adicione o id de teste (ou `data-testid`) com o valor `my-action`, você pode criar:
+
+```html
+<button data-testid="my-action"></button>
+```
+
+ou
+
+```html
+<a data-testid="my-action"><a/>
+```
+
+ou seja, o atributo `data-testid="my-action"` servirá para o React Testing Library(RTL) identificar o elemento e dessa forma, conseguiremos realizar testes unitários focados no comportamento da aplicação.
+
+Afim de verificar a solução proposta, você pode executar todos os testes unitários localmente, basta executar:
+
+```bash
+npm test
+```
+
+---
+
 # Requisitos do projeto
+:warning: **PULL REQUESTS COM ISSUES DE LINTER NÃO SERÃO AVALIADAS.** :warning:
 
 ## Lista de requisitos
 
