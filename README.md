@@ -517,7 +517,7 @@ O que será avaliado:
 
 O que será avaliado:
 ```
-- O botão deve estar dentro do último item da linha da tabela e deve possuir `data-testid="delete-btn
+- O botão deve estar dentro do último item da linha da tabela e deve possuir `data-testid="delete-btn"`
 - Ao ser clicado, o botão deleta a linha da tabela, alterando o estado global
 ```
 
