@@ -268,7 +268,6 @@ Crie uma página para que a pessoa usuária se identifique, com email e senha. E
   - Crie um local para que o usuário insira seu email e senha
   - Crie um botão com o texto "Entrar"
   - Realize as seguintes verificações nos campos de email, senha e botão:
-
   - Salve o email no estado da aplicação, com a chave email, assim que o usuário logar
   - A rota deve ser mudada para "/carteira" após o clique no botão
   ```
