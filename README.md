@@ -23,12 +23,11 @@ Aqui você vai encontrar os detalhes de como estruturar o desenvolvimento do seu
   - [Antes de começar a desenvolver](#antes-de-começar-a-desenvolver)
   - [Durante o desenvolvimento](#durante-o-desenvolvimento)
   - [Depois de terminar o desenvolvimento (opcional)](#depois-de-terminar-o-desenvolvimento-opcional)
+- [Como desenvolver](#como-desenvolver)
+  - [Linter](#linter)
   - [Documentação da API de Cotações de Moedas](#documentação-da-api-de-cotações-de-moedas)
   - [Execução de testes unitários](#execução-de-testes-unitários)
-- [Como desenvolver](#como-desenvolver)
 - [Requisitos do projeto](#requisitos-do-projeto)
-  - [Linter](#linter)
-  - [Antes de começar](#antes-de-começar)
   - [Lista de requisitos](#lista-de-requisitos)
     - [Página de Login](#página-de-login)
     - [Página da Carteira](#página-da-carteira)
@@ -93,9 +92,9 @@ Através dessa aplicação, será possível realizar as operações básicas de 
 ## ANTES DE COMEÇAR A DESENVOLVER
 
 1. Clone o repositório
-  * `git clone git@github.com:tryber/sd-06-project-trybewallet.git`.
+  * `git clone git@github.com:tryber/sd-0x-project-trybewallet.git`.
   * Entre na pasta do repositório que você acabou de clonar:
-    * `cd sd-06-project-trybewallet`
+    * `cd sd-0x-project-trybewallet`
 
 2. Instale as dependências e inicialize o projeto
   * Instale as dependências:
@@ -136,11 +135,43 @@ Para **"entregar"** seu projeto, siga os passos a seguir:
 * Vá até a página **DO SEU** _Pull Request_, adicione a label de _"code-review"_ e marque seus colegas
   * No menu à direita, clique no _link_ **"Labels"** e escolha a _label_ **code-review**
   * No menu à direita, clique no _link_ **"Assignees"** e escolha **o seu usuário**
-  * No menu à direita, clique no _link_ **"Reviewers"** e digite `students`, selecione o time `tryber/students-sd-06`
+  * No menu à direita, clique no _link_ **"Reviewers"** e digite `students`, selecione o time `tryber/students-sd-0x`
 
 ---
 
-### Documentação da API de Cotações de Moedas
+# Como desenvolver
+
+Nessa aplicação você deverá **obrigatoriamente** utilizar o seguinte formato do estado global:
+
+```
+{
+  user: {
+    email: '',
+  },
+  wallet: {
+    currencies: [],
+    expenses: []
+  }
+}
+```
+
+É importante respeitar esse formato para que o avaliador funcione corretamente. Você pode adicionar novos campos ao seu estado global, mas essa estrutura básica deve se manter. Por exemplo, você pode adicionar uma propriedade `isFetching` no seu estado. Mas você **não** pode salvar as despesas em uma chave diferente de `wallet.expenses`.
+
+Outra coisa importante: devido a estrutura que o avaliador utiliza para realizar os testes, é **necessário** que o seu `<Provider />` e o seu `<BrowserRouter />` estejam no arquivo `index.js` e **não** no `<App />`.
+
+## Linter
+
+Para garantir a qualidade do código, vamos utilizar neste projeto o linter ESLint. Assim o código estará alinhado com as boas práticas de desenvolvimento, sendo mais legível e de fácil manutenção! Para rodar o *linter* localmente no projeto, execute o comando abaixo: 
+
+`npm run lint`
+
+⚠ PULL REQUESTS COM ISSUES DE LINTER NÃO SERÃO AVALIADAS. ATENTE-SE PARA RESOLVÊ-LAS ANTES DE FINALIZAR O DESENVOLVIMENTO! ⚠
+
+Aqui encontram-se os requisitos do projeto. Em cada requisito você encontrara uma imagem de um protótipo de como sua aplicação deve ficar. Estilo da página não será avaliado.
+
+---
+
+## Documentação da API de Cotações de Moedas
 
 Sua página _web_ irá consumir os dados da API do _awesomeapi API de Cotações_ para realizar a busca de câmbio de moedas. Para realizar essas buscas, vocês precisarão consultar o seguinte _endpoint_:
 
@@ -170,8 +201,9 @@ O retorno desse endpoint será algo no formato:
 
 Se você quiser aprender mais informações sobre a API, veja a [documentação](https://docs.awesomeapi.com.br/api-de-moedas).
 
+---
 
-### Execução de testes unitários
+## Execução de testes unitários
 
 Vamos utilizar [React Testing Library](https://testing-library.com/docs/react-testing-library/intro) para execução dos testes unitários.
 
@@ -201,39 +233,8 @@ npm test
 
 ---
 
-# Como desenvolver
-
-Nessa aplicação você deverá **obrigatoriamente** utilizar o seguinte formato do estado global:
-
-```
-{
-  user: {
-    email: '',
-  },
-  wallet: {
-    currencies: [],
-    expenses: []
-  }
-}
-```
-
-É importante respeitar esse formato para que o avaliador funcione corretamente. Você pode adicionar novos campos ao seu estado global, mas essa estrutura básica deve se manter. Por exemplo, você pode adicionar uma propriedade `isFetching` no seu estado. Mas você **não** pode salvar as despesas em uma chave diferente de `wallet.expenses`.
-
-Outra coisa importante: devido a estrutura que o avaliador utiliza para realizar os testes, é **necessário** que o seu <Provider /> e o seu <BrowserRouter /> estejam no arquivo `index.js` e **não** no `<App />`.
-
-## Linter
-
-Para garantir a qualidade do código, vamos utilizar neste projeto o linter ESLint. Assim o código estará alinhado com as boas práticas de desenvolvimento, sendo mais legível e de fácil manutenção! Para rodar o *linter* localmente no projeto, execute o comando abaixo: 
-
-`npm run lint`
-
-⚠ PULL REQUESTS COM ISSUES DE LINTER NÃO SERÃO AVALIADAS. ATENTE-SE PARA RESOLVÊ-LAS ANTES DE FINALIZAR O DESENVOLVIMENTO! ⚠
-
-Aqui encontram-se os requisitos do projeto. Em cada requisito você encontrara uma imagem de um protótipo de como sua aplicação deve ficar. Estilo da página não será avaliado.
-
----
-
 # Requisitos do projeto
+:warning: **PULL REQUESTS COM ISSUES DE LINTER NÃO SERÃO AVALIADAS.** :warning:
 
 ## Lista de requisitos
 
@@ -267,7 +268,6 @@ Crie uma página para que a pessoa usuária se identifique, com email e senha. E
   - Crie um local para que o usuário insira seu email e senha
   - Crie um botão com o texto "Entrar"
   - Realize as seguintes verificações nos campos de email, senha e botão:
-
   - Salve o email no estado da aplicação, com a chave email, assim que o usuário logar
   - A rota deve ser mudada para "/carteira" após o clique no botão
   ```
@@ -517,7 +517,7 @@ O que será verificado:
 
 O que será verificado:
 ```
-- O botão deve estar dentro do último item da linha da tabela e deve possuir `data-testid="delete-btn
+- O botão deve estar dentro do último item da linha da tabela e deve possuir `data-testid="delete-btn"`
 - Ao ser clicado, o botão deleta a linha da tabela, alterando o estado global
 ```
 
