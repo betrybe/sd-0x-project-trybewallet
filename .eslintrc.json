@@ -10,14 +10,13 @@
     },
     "sourceType": "module"
   },
-  "plugins": ["react"],
+  "plugins": ["react", "react-redux", "sonarjs"],
   "rules": {
     "indent": ["error", 2],
-    "linebreak-style": ["error", "unix"],
+    "linebreak-style": 0,
     "quotes": ["error", "single"],
     "semi": ["error", "always"],
     "class-methods-use-this": ["off"],
-    "complexity": ["off", 11],
     "no-magic-numbers": [
       "error",
       {
@@ -36,7 +35,6 @@
       }
     ],
     "no-console": ["off"],
-    "no-underscore-dangle": ["off"],
     "no-param-reassign": ["off"],
     "consistent-return": ["off"],
     "no-undef": ["off"],
@@ -48,9 +46,29 @@
         "ignoreUrls": true
       }
     ],
+    "max-params": ["error", 4],
+    "max-lines": ["error", 250],
+    "max-lines-per-function": ["error", 20],
+    "complexity": ["error", 15],
     "object-curly-newline": ["off"],
-
     "import/no-extraneous-dependencies": ["off"],
+    "sonarjs/cognitive-complexity": ["error", 15],
+    "sonarjs/no-collapsible-if": ["error"],
+    "sonarjs/no-collection-size-mischeck": ["error"],
+    "sonarjs/no-duplicate-string": ["error"],
+    "sonarjs/no-duplicated-branches": ["error"],
+    "sonarjs/no-extra-arguments": ["error"],
+    "sonarjs/no-identical-conditions": ["error"],
+    "sonarjs/no-identical-expressions": ["error"],
+    "sonarjs/no-identical-functions": ["error"],
+    "sonarjs/no-inverted-boolean-check": ["error"],
+    "sonarjs/no-one-iteration-loop": ["error"],
+    "sonarjs/no-redundant-boolean": ["error"],
+    "sonarjs/no-unused-collection": ["error"],
+    "sonarjs/no-use-of-empty-return-value": ["error"],
+    "sonarjs/no-useless-catch": ["error"],
+    "sonarjs/prefer-object-literal": ["error"],
+    "sonarjs/prefer-single-boolean-return": ["error"],
     "react/jsx-filename-extension": [1, {"extensions": [".js", ".jsx"]}],
     "react/default-props-match-prop-types": [
       "error",
@@ -80,7 +98,7 @@
     "react/jsx-closing-tag-location": ["error"],
     "react/jsx-curly-newline": ["error"],
     "react/jsx-fragments": ["error"],
-    "react/jsx-max-depth": ["error", {"max": 8}],
+    "react/jsx-max-depth": ["error", {"max": 4}],
     "react/jsx-no-useless-fragment": ["error"],
     "react/jsx-curly-spacing": ["error", {"when": "always"}],
     "react/jsx-equals-spacing": ["error", "never"],
@@ -88,7 +106,7 @@
     "react/jsx-indent": [
       "error",
       2,
-      {"checkAttributes": true, "indentLogicalExpressions": true}
+      { "checkAttributes": true, "indentLogicalExpressions": true }
     ],
     "react/jsx-indent-props": ["error", 2],
     "react/jsx-key": ["error"],
@@ -116,6 +134,8 @@
         "logical": "ignore",
         "prop": "ignore"
       }
-    ]
+    ],
+    "react-redux/connect-prefer-named-arguments": ["error"],
+    "react-redux/no-unused-prop-types": ["error"]
   }
 }
