@@ -18,7 +18,7 @@ Aqui você vai encontrar os detalhes de como estruturar o desenvolvimento do seu
 - [Entregáveis](#entregáveis)
   - [O que deverá ser desenvolvido](#o-que-deverá-ser-desenvolvido)
   - [Desenvolvimento](#desenvolvimento)
-  - [Data de entrega](#data-de-entrega)
+  - [Data de Entrega](#data-de-entrega)
 - [Instruções para entregar seu projeto](#instruções-para-entregar-seu-projeto)
   - [Antes de começar a desenvolver](#antes-de-começar-a-desenvolver)
   - [Durante o desenvolvimento](#durante-o-desenvolvimento)
@@ -30,12 +30,19 @@ Aqui você vai encontrar os detalhes de como estruturar o desenvolvimento do seu
 - [Requisitos do projeto](#requisitos-do-projeto)
   - [Lista de requisitos](#lista-de-requisitos)
     - [Página de Login](#página-de-login)
+      - [1. Crie uma página inicial de login com os seguintes campos e características:](#1-crie-uma-página-inicial-de-login-com-os-seguintes-campos-e-características)
     - [Página da Carteira](#página-da-carteira)
-      - [Configurando sua página](#configurando-sua-página)
-      - [Header](#header)
-      - [Formulário de adição de Despesa](#formulário-de-adição-de-despesa)
-      - [Tabela de Gastos](#tabela-de-gastos)
+    - [Configurando sua página](#configurando-sua-página)
+      - [2. Crie uma página para sua carteira com as seguintes características:](#2-crie-uma-página-para-sua-carteira-com-as-seguintes-características)
+    - [Header](#header)
+      - [3. Crie um header para a página de carteira contendo as seguintes características:](#3-crie-um-header-para-a-página-de-carteira-contendo-as-seguintes-características)
+    - [Formulário de adição de Despesa](#formulário-de-adição-de-despesa)
+      - [4. Desenvolva um formulário para adicionar uma despesa contendo as seguintes características:](#4-desenvolva-um-formulário-para-adicionar-uma-despesa-contendo-as-seguintes-características)
+    - [Tabela de Gastos](#tabela-de-gastos)
+      - [5. Desenvolva uma tabela com os gastos contendo as seguintes características:](#5-desenvolva-uma-tabela-com-os-gastos-contendo-as-seguintes-características)
+      - [6. Crie um botão para deletar uma despesa da tabela contendo as seguintes características:](#6-crie-um-botão-para-deletar-uma-despesa-da-tabela-contendo-as-seguintes-características)
     - [Bônus](#bônus)
+      - [7. Crie um botão para editar uma despesa da tabela contendo as seguintes características:](#7-crie-um-botão-para-editar-uma-despesa-da-tabela-contendo-as-seguintes-características)
 - [Avisos Finais](#avisos-finais)
 
 ---
@@ -89,7 +96,7 @@ Através dessa aplicação, será possível realizar as operações básicas de 
 
 # Instruções para entregar seu projeto
 
-## ANTES DE COMEÇAR A DESENVOLVER
+## Antes de começar a desenvolver
 
 1. Clone o repositório
   * `git clone git@github.com:tryber/sd-0x-project-trybewallet.git`.
@@ -113,7 +120,7 @@ Através dessa aplicação, será possível realizar as operações básicas de 
   * Agora, crie uma branch onde você vai guardar os commits do seu projeto
 ---
 
-## DURANTE O DESENVOLVIMENTO
+## Durante o desenvolvimento
 
 * Faça `commits` das alterações que você fizer no código regularmente
 
@@ -128,7 +135,7 @@ Através dessa aplicação, será possível realizar as operações básicas de 
 
 ---
 
-## DEPOIS DE TERMINAR O DESENVOLVIMENTO (OPCIONAL)
+## Depois de terminar o desenvolvimento (opcional)
 
 Para **"entregar"** seu projeto, siga os passos a seguir:
 
@@ -244,7 +251,7 @@ Crie uma página para que a pessoa usuária se identifique, com email e senha. E
 
   ![image](login.gif)
 
-1. Crie uma página inicial de login com os seguintes campos e características:
+#### 1. Crie uma página inicial de login com os seguintes campos e características:
 
   * A rota para esta página deve ser ‘/’.
 
@@ -280,7 +287,7 @@ Crie uma página para gerenciar a carteira de gastos em diversas moedas, e que t
 
 ### Configurando sua página
 
-2. Crie uma página para sua carteira com as seguintes características:
+#### 2. Crie uma página para sua carteira com as seguintes características:
 
   * A rota para esta página deve ser `/carteira`
 
@@ -294,7 +301,7 @@ Crie uma página para gerenciar a carteira de gastos em diversas moedas, e que t
 
 ### Header
 
-3. Crie um header para a página de carteira contendo as seguintes características:
+#### 3. Crie um header para a página de carteira contendo as seguintes características:
 
   * Um elemento que exiba o email da pessoa usuária que fez login.
 
@@ -323,7 +330,7 @@ Crie uma página para gerenciar a carteira de gastos em diversas moedas, e que t
 
 ### Formulário de adição de Despesa
 
-4. Desenvolva um formulário para adicionar uma despesa contendo as seguintes características:
+#### 4. Desenvolva um formulário para adicionar uma despesa contendo as seguintes características:
 
   * Um campo para adicionar valor da despesa.
 
@@ -487,7 +494,7 @@ Crie uma página para gerenciar a carteira de gastos em diversas moedas, e que t
 
 ### Tabela de Gastos
 
-5. Desenvolva uma tabela com os gastos contendo as seguintes características:
+#### 5. Desenvolva uma tabela com os gastos contendo as seguintes características:
 
   * A tabela deve possuir um cabeçalho **exatamente** com os campos Descrição, Tag, Método de pagamento, Valor, Moeda, Câmbio utilizado, Valor convertido e Moeda de conversão
 
@@ -507,7 +514,7 @@ O que será verificado:
 - A tabela deve ser alimentada pelo estado da aplicação, que estará disponível na chave expenses que vem do reducer wallet.
 ```
 
-6. Crie um botão para deletar uma despesa da tabela contendo as seguintes características:
+#### 6. Crie um botão para deletar uma despesa da tabela contendo as seguintes características:
 
     ![image](btnExcluir.gif)
 
@@ -523,7 +530,7 @@ O que será verificado:
 
 ### Bônus
 
-7. Crie um botão para editar uma despesa da tabela contendo as seguintes características:
+#### 7. Crie um botão para editar uma despesa da tabela contendo as seguintes características:
 
     ![image](btnEditar.gif)
 
