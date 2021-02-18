@@ -3,22 +3,36 @@ on:
     types: [opened, synchronize]
 
 jobs:
-  evaluator_job:
+  eslint:
     runs-on: ubuntu-18.04
-    name: Evaluator job
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v1.4.4
         with:
           node-version: '12'
-      - name: Stylelint code analysis step
-        uses: betrybe/stylelint-linter-action@v1
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-      - name: ESLint code analysis step
+      - name: ESLint
         uses: betrybe/eslint-linter-action@v2.1
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
+
+  stylelint:
+    runs-on: ubuntu-18.04
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1.4.4
+        with:
+          node-version: '12'
+      - name: Stylelint
+        uses: betrybe/stylelint-linter-action@v1
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+  evaluator:
+    name: Evaluator Job
+    runs-on: ubuntu-18.04
+    needs: [eslint, stylelint]
+    steps:
+      - uses: actions/checkout@v2
       - name: Evaluator step
         id: evaluator
         uses: betrybe/react-scripts-evaluator-action@v4
