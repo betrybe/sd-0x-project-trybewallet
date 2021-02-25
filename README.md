@@ -100,7 +100,7 @@ Através dessa aplicação, será possível realizar as operações básicas de 
 ## Antes de começar a desenvolver
 
 1. Clone o repositório
-  * `git clone git@github.com:tryber/sd-0x-project-trybewallet-rubric.git`.
+  * `git clone git@github.com:tryber/sd-0x-project-trybewallet.git`.
   * Entre na pasta do repositório que você acabou de clonar:
     * `cd sd-0x-project-trybewallet-rubric`
 
