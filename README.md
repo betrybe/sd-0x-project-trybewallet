@@ -524,7 +524,7 @@ Crie uma página para gerenciar a carteira de gastos em diversas moedas, e que t
 
     * O campo de Moeda e Moeda de Conversão deverão conter o nome da moeda. Portanto, ao invés de 'USD' ou 'EUR', deve conter "Dólar Comercial" e "Euro", respectivamente
 
-    * Por padrão, o campo 'Moeda de conversão' exibirá 'Real'
+    * Por padrão, o campo 'Moeda de conversão' exibirá 'Real Brasileiro'
 
     * Atenção também às casas decimais dos campos. Como são valores contábeis, eles devem apresentar duas casas após a vírgula. Arredonde sua resposta somente na hora de renderizar o resultado, e para os cálculos utilize sempre os valores vindos da API (utilize o campo `ask` que vem da API).
 
