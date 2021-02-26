@@ -264,6 +264,7 @@ npm test
 
 # Requisitos do projeto
 :warning: **PULL REQUESTS COM ISSUES DE LINTER NÃO SERÃO AVALIADAS.** :warning:
+
 :warning: **Os gifs são meramente ilustrativos, para visualizar o fluxo da aplicação, os nomes devem seguir os requisitos e não o gif.** :warning:
 
 ## Lista de requisitos
