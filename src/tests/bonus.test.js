@@ -11,7 +11,7 @@ afterEach(() => jest.clearAllMocks());
 describe('11 - Crie um botão para editar uma despesa da tabela contendo as seguintes características:', () => {
   const initial = initialStateWithExpenses;
 
-  test('O botão deve estar dentro do último item da linha da tabela e deve possuir `data-testid="edit-btn"`', () => {
+  test('O botão deve estar dentro da linha da tabela e deve possuir `data-testid="edit-btn"`', () => {
     renderWithRouterAndStore(<Wallet />, '/carteira', initial);
     expect(screen.getAllByTestId('edit-btn')[0]).toBeInTheDocument();
   });
