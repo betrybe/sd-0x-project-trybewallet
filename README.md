@@ -12,6 +12,7 @@ Aqui você vai encontrar os detalhes de como estruturar o desenvolvimento do seu
 
 ---
 
+
 # Sumário
 
 - [Boas vindas ao repositório do projeto Trybe Wallet!](#boas-vindas-ao-repositório-do-projeto-trybe-wallet)
@@ -23,7 +24,6 @@ Aqui você vai encontrar os detalhes de como estruturar o desenvolvimento do seu
   - [Data de Entrega](#data-de-entrega)
 - [Instruções para entregar seu projeto](#instruções-para-entregar-seu-projeto)
   - [Antes de começar a desenvolver](#antes-de-começar-a-desenvolver)
-  - [* Agora, crie uma branch onde você vai guardar os commits do seu projeto](#-agora-crie-uma-branch-onde-você-vai-guardar-os-commits-do-seu-projeto)
   - [Durante o desenvolvimento](#durante-o-desenvolvimento)
   - [Depois de terminar o desenvolvimento (opcional)](#depois-de-terminar-o-desenvolvimento-opcional)
 - [Como desenvolver](#como-desenvolver)
@@ -38,7 +38,6 @@ Aqui você vai encontrar os detalhes de como estruturar o desenvolvimento do seu
       - [2. Realize as seguintes verificações nos campos de email, senha e botão:](#2-realize-as-seguintes-verificações-nos-campos-de-email-senha-e-botão)
       - [3. Utilize o Redux para salvar no estado global as informações da pessoa logada](#3-utilize-o-redux-para-salvar-no-estado-global-as-informações-da-pessoa-logada)
     - [Página da Carteira](#página-da-carteira)
-  - [!image](#)
     - [Configurando sua página](#configurando-sua-página)
       - [4. Crie uma página para sua carteira com as seguintes características:](#4-crie-uma-página-para-sua-carteira-com-as-seguintes-características)
     - [Header (cabeçalho)](#header-cabeçalho)
