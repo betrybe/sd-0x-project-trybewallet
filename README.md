@@ -464,6 +464,12 @@ Crie uma página para gerenciar a carteira de gastos em diversas moedas, e que t
                 "ask": "5.6208",
                 ...
               },
+              "USDT": {
+                "code": "USDT",
+                "name": "Dólar Turismo",
+                "ask": "5.7208",
+                ...
+              },
               "CAD": {
                 "code": "CAD",
                 "name": "Dólar Canadense",
