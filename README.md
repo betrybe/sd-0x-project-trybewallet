@@ -424,7 +424,7 @@ Crie uma página para gerenciar a carteira de gastos em diversas moedas, e que t
 
   * Ao entrar na página `/carteira`, você deverá fazer uma requisição para a API das moedas e preencher as opções do `<select>` de "Moedas" com os valores retornados. Utilizando as siglas das moedas.
 
-  * As opções devem conter os valores: 'USD', 'CAD', 'EUR', 'GBP', 'ARS', 'BTC', 'LTC', 'JPY', 'CHF', 'AUD', 'CNY', 'ILS', 'ETH' e 'XRP'.
+  * As opções devem conter os valores, por exemplo: 'USD', 'CAD', 'EUR', 'GBP', 'ARS', 'BTC', 'LTC', 'JPY', 'CHF', 'AUD', 'CNY', 'ILS', 'ETH' e 'XRP'.
 
     * Esses valores devem vir da API através do endpoint: https://economia.awesomeapi.com.br/json/all.
 
@@ -462,6 +462,12 @@ Crie uma página para gerenciar a carteira de gastos em diversas moedas, e que t
                 "code": "USD",
                 "name": "Dólar Comercial",
                 "ask": "5.6208",
+                ...
+              },
+              "USDT": {
+                "code": "USDT",
+                "name": "Dólar Turismo",
+                "ask": "5.7208",
                 ...
               },
               "CAD": {
