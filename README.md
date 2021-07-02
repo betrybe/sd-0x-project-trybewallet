@@ -269,6 +269,17 @@ Afim de verificar a solução proposta, você pode executar todos os testes unit
 npm test
 ```
 
+### Dica: desativando testes
+
+Para rodar apenas um teste, basta a utilização da função `.only` após o describe. Com isso, será possível que apenas um requisito rode localmente e seja avaliado.
+
+![image](only-all-green.png)
+
+Caso queira avaliar apenas um tópico do requisito, você também pode usar o `.only` após o `test`.
+
+![image](only-one-green.png)
+
+
 ---
 
 # Requisitos do projeto
